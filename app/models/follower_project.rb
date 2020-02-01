@@ -1,0 +1,2 @@
+class FollowerProject < ApplicationRecord
+end
