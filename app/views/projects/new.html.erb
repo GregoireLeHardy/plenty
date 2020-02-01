@@ -5,8 +5,10 @@
 
       <%= simple_form_for @project do |f| %>
         <%= f.input :name %>
-        <%= f.input :short_description %>
-        <%= f.input :long_description %>
+        <%= f.input :short_description, maxlength: 255 %>
+        <p>Max 255 characters</p>
+        <%= f.input :long_description, maxlength: 1500 %>
+        <p>Max 1500 characters</p>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
