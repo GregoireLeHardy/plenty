@@ -40,3 +40,5 @@ yarn-debug.log*
 *.swp
 .DS_Store
 .env*
+
+!tmp/pids/server.pid
