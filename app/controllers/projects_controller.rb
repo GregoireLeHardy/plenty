@@ -1,4 +1,4 @@
- class ProjectsController < ApplicationController
+class ProjectsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @projects = Project.all
@@ -20,7 +20,7 @@
     @project = Project.new
   end
 
-private
+  private
 
   def project_params_user
     project_params.merge(user_id: current_user.id)
