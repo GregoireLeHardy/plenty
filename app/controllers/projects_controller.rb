@@ -20,6 +20,10 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def create_article
+    redirect_to new_project_article_path
+  end
+
   private
 
   def project_params_user
