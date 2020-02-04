@@ -4,6 +4,15 @@
       <h1>Create a new project</h1>
 
       <%= simple_form_for @project do |f| %>
+       <!--  <% if @project.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @project.errors.full_messages.each do |message| %>
+                <li><% message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %> -->
         <%= f.input :name %>
         <%= f.input :short_description, maxlength: 255 %>
         <p>Max 255 characters</p>
@@ -15,3 +24,4 @@
     </div>
   </div>
 </div>
+
