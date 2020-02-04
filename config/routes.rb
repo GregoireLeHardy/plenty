@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'pages/home'
   resources :users, only: [:show, :new, :create]
   resources :projects do
-    resources :donations, only: [:show, :index, :create, :new]
+    resources :articles, only: [:show, :index, :create, :new, :update, :delete]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
