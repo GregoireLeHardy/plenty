@@ -1,3 +1,17 @@
 <!-- app/views/articles/index.html.erb -->
-<%= cl_image_tag("vofa6yupbivsgcem3yjj",
-      width: 400, height: 300, crop: :fill) %>
+<div class="container test">
+
+  <div class="page-header">
+    <h1>Check Our Articles</h1>
+  </div>
+
+  <div class="row" style="justify-content: center">
+    <div class="col-10">
+      <div class="container test-2">
+        <div class="row">
+          <% @articles.each do |article| %>
+            <%= render 'card', article: article %>
+          <% end %>
+        </div>
+    </div>
+</div>

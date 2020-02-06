@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:project_id])
     @article = Article.find(params[:id])
   end
 

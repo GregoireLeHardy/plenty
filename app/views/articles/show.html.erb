@@ -1,3 +1,7 @@
 <!-- app/views/articles/show.html.erb -->
 <div> <%= @article.title %> </div>
 <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+
+<div class="New-article">
+    <%= link_to "Create A New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
+</div>
