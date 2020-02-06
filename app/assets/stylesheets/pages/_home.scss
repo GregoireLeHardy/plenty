@@ -1,22 +1,66 @@
-.home_picture img {
-  background-image: url(https://res.cloudinary.com/dnizmljvi/image/upload/v1580904941/photo-1544927028-6ea64c7c2854_lruvbw.jpg);
-  background-color: green;
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
-  padding: 50px 0;
+@import url('https://fonts.googleapis.com/css?family=Lato:100&display=swap');
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #5CA4EA;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
 }
 
+.cntnr {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align: center;
+}
 
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+}
 
-// .home_picture h1 {
-//   color: white;
-//   text-align: right;
-// }
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+  position: center;
+}
 
-// .home_picture p {
-//   color: white;
-//   opacity: .7;
-//   font-size: 20px;
-//   text-align: right;
-// }
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}

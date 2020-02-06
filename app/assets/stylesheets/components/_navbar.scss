@@ -1,17 +1,24 @@
 .navbar-lewagon {
-  position: absolute;
   grid-column: 1;
   overflow: visible;
-  width: 80px;
+  width: 70px;
   height: 1080px;
-  left: 0px;
-  top: 0px;
   color: white;
   opacity: 0.748;
+  background:white;
+  z-index:999;
+  font-size:16px;
+  color:#6c6c6c;
+  text-transform:uppercase;
 }
 
 .navbar-lewagon img {
   width: 40px;
+  position: fixed;
+  left: 15px;
+  right: 15px;
+  top: 30px;
+  bottom: 15px;
 }
 
 // /* Navigation */

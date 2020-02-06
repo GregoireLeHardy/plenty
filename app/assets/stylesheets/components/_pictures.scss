@@ -1,10 +1,25 @@
-.home_picture img {
-  background-image: url(https://res.cloudinary.com/dnizmljvi/image/upload/v1580904941/photo-1544927028-6ea64c7c2854_lruvbw.jpg);
-  background-color: green;
-  background-size: cover;
+.container {
+  size: 1920px 1080px;
+}
+
+.banner {
+  background-image: url(https://res.cloudinary.com/dnizmljvi/image/upload/v1581015608/kyle-ellefson-NJ1DFbX7YVs-unsplash_stc3pd.jpg);
+  background-size: 1920px 1080px;
   background-position: center;
   background-repeat: none;
-  padding: 50px 0;
+  padding: 462px;
+}
+
+.container h1 {
+  color: white;
+  text-align: center;
+}
+
+.container p {
+  color: white;
+  opacity: .7;
+  font-size: 20px;
+  text-align: center;
 }
 
 // .home_picture h1 {
