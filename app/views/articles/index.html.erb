@@ -6,13 +6,11 @@
   </div>
 
   <div class="row">
-    <div class="col-8">
-      <div class="container">
+      <div class="container test-2">
         <div class="row">
           <% @articles.each do |article| %>
             <%= render 'card', article: article %>
           <% end %>
         </div>
-      </div>
     </div>
 </div>
