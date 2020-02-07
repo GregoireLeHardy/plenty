@@ -17,6 +17,7 @@ user = User.create!(
 puts 'user successfully created'
 
 puts 'Creating 5 fake projects...'
+puts 'And 2 fake articles per project'
 5.times do
   project = Project.new(
     name:    Faker::Company.name,
@@ -28,13 +29,21 @@ puts 'Creating 5 fake projects...'
   project.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   project.save!
 
-  puts 'Creating 5 fake articles'
   article = Article.new(
       title:    Faker::Lorem.words(number: 4),
       description: Faker::Lorem.paragraph(sentence_count: 10),
       project_id: project.id
     )
     file = URI.open('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+    article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    article.save!
+
+  article = Article.new(
+      title:    Faker::Lorem.words(number: 4),
+      description: Faker::Lorem.paragraph(sentence_count: 10),
+      project_id: project.id
+    )
+    file = URI.open('https://images.unsplash.com/photo-1515961896317-adf9e14bdcc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
     article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     article.save!
 
