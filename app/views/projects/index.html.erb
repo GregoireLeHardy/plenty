@@ -1,19 +1,10 @@
-<div class="container test">
-
-  <div class="page-header">
-    <h1>Check Our Projects <small>Support what inspires you!</small></h1>
-  </div>
-
-  <div class="row" style="justify-content: center">
-    <div class="col-10">
-      <div class="container">
-        <div class="row">
-          <% @projects.each do |project| %>
-            <%= render 'card', project: project %>
-          <% end %>
-        </div>
-      </div>
+      <% @projects.each do |project| %>
+  <div class="square-box" style="justify-content: center">
+    <div class="square-content">
+        <%= render 'card', project: project %>
+      <% end %>
     </div>
+  </div>
     <!-- <div class="col-4" style="right: -7%;">
       <div
         class ="map-container sticky-top"
@@ -23,5 +14,3 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div> -->
-  </div>
-</div>
