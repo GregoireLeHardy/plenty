@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_134947) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.integer "price_cents", default: 0, null: false
+    t.integer "articles_count", default: 0
     t.string "sku"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end

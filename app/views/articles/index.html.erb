@@ -1,6 +1,11 @@
 <!-- app/views/articles/index.html.erb -->
 <div class="container test">
 
+<div class="filter-options">
+  <%= link_to "Latest", project_articles_path(filter: 'recent') %>
+  <%= link_to "Active", project_articles_path(filter: 'active') %>
+</div>
+
   <div class="page-header">
     <h1>Check Our Articles</h1>
   </div>

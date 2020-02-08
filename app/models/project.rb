@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  include Filterable
   belongs_to :user
   has_many :articles
   has_many :donations
