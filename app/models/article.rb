@@ -1,11 +1,15 @@
 class Article < ApplicationRecord
+  include Filterable
   has_one_attached :photo
-  belongs_to :project
+  belongs_to :project, counter_cache: true
 
   validates :photo, presence: true
   validates :description, presence: true
   validates :title, presence: true
   validate :photo_validation
+
+  scope :recent, -> { order("created_at DESC") }
+  scope :active, -> { where(id: 13) }
 
 
   def photo_validation
