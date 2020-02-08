@@ -27,12 +27,13 @@
 //   color: white;
 //   font-size: 18px;
 // }
+/*
 
 .square-box{
     position: relative;
-    width: 50%;
+    width: 640px;
+    length: 640px;
     overflow: hidden;
-    background: #4679BD;
 }
 .square-box:before{
     content: "";
@@ -47,4 +48,9 @@
     right: 0;
     color: white;
     text-align: center;
+}
+*/
+
+.row-no-padding .col-sm-4 {
+  padding: 0;
 }
