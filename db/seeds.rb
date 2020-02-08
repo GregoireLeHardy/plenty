@@ -23,6 +23,7 @@ puts 'And 2 fake articles per project'
     name:    Faker::Company.name,
     short_description: Faker::Lorem.paragraph(sentence_count: 2),
     long_description: Faker::Lorem.paragraph(sentence_count: 5),
+    price_cents: 1500,
     user_id: user.id
   )
   file = URI.open('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
