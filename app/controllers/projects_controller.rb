@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @projects = Project.all
+    @projects = Project.filter(params.slice(:name, :project_category))
   end
 
   def show
