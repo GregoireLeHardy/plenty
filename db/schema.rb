@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_01_125830) do
+ActiveRecord::Schema.define(version: 2020_02_08_094823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 2020_02_01_125830) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.integer "project_id"
     t.integer "popularity_article"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_articles_on_project_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,36 +55,42 @@ ActiveRecord::Schema.define(version: 2020_02_01_125830) do
 
   create_table "donations", force: :cascade do |t|
     t.integer "amount"
-    t.integer "project_id"
-    t.integer "user_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.index ["project_id"], name: "index_donations_on_project_id"
+    t.index ["user_id"], name: "index_donations_on_user_id"
   end
 
   create_table "follower_projects", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "user_id"
+    t.index ["project_id"], name: "index_follower_projects_on_project_id"
+    t.index ["user_id"], name: "index_follower_projects_on_user_id"
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer "donation_id"
     t.integer "cent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "donation_id"
+    t.index ["donation_id"], name: "index_payments_on_donation_id"
   end
 
   create_table "project_categories", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_project_categories_on_category_id"
+    t.index ["project_id"], name: "index_project_categories_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
     t.text "short_description"
     t.text "long_description"
@@ -91,6 +98,8 @@ ActiveRecord::Schema.define(version: 2020_02_01_125830) do
     t.boolean "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
