@@ -8,12 +8,15 @@
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
   <div> <%= @project.long_description %> </div>
+  <p>Amount: <%= humanized_money_with_symbol(@project.price) %></p>
   <div>
-    <span>
-      <%= link_to "Donate", project_path(@project), class: "btn btn-secondary" %>
-    </span>
+    <%= form_tag donations_path do %>
+      <%= hidden_field_tag 'project_id', @project.id %>
+      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
+
 
 
 <div class="container test">
