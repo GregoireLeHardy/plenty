@@ -1,8 +1,19 @@
 <!-- app/views/articles/show.html.erb -->
-<div> <%= @project.name %> </div>
-<div> <%= @project.short_description %> </div>
-<div> <%= @project.long_description %> </div>
-<%= cl_image_tag @project.photo.key, width: 400, height: 300, crop: :fill %>
+<% background_url = cl_image_path @project.photo.key, width: 200, height: 250 %>
+
+<div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+
+
+  <%= cl_image_tag @project.photo.key, width: 400, height: 300, crop: :fill %>
+  <div> <%= @project.name %> </div>
+  <div> <%= @project.short_description %> </div>
+  <div> <%= @project.long_description %> </div>
+  <div>
+    <span>
+      <%= link_to "Donate", project_path(@project), class: "btn btn-secondary" %>
+    </span>
+  </div>
+</div>
 
 
 <div class="container test">
