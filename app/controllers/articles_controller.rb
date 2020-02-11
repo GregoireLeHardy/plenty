@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
   def index
     @project = Project.find(params[:project_id])
-    @articles = get_filtered_articles
+    @articles = filtered_articles
     @article = Article.filter(params.slice(:name))
   end
 
@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def get_filtered_articles
+  def filtered_articles
     if params[:filter] == 'recent'
       return @project.articles.recent
     elsif params[:filter] == 'active'

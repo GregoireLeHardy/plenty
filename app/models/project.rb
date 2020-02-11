@@ -1,5 +1,4 @@
 class Project < ApplicationRecord
-  include Filterable
   belongs_to :user
   has_many :articles
   has_many :donations
@@ -14,6 +13,10 @@ class Project < ApplicationRecord
   validates :long_description, length: { maximum: 1500 }
   validates :name, presence: true
   validate :photo_validation
+
+  scope :recent, -> { order("created_at DESC") }
+  scope :active, -> { where(id: 13) }
+  scope :category, -> (categories) { joins(:categories).where('categories.name': categories) }
 
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?
