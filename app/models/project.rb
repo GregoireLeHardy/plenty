@@ -14,6 +14,7 @@ class Project < ApplicationRecord
   validates :long_description, length: { maximum: 1500 }
   validates :name, presence: true
   validate :photo_validation
+  monetize :price_cents
 
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?
