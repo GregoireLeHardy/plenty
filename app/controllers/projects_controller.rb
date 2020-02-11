@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
     @projects = filtered_projects
-    @projects = Project.filter(params.slice(:name, :project_category))
   end
 
   def show
@@ -19,6 +18,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @project = Project.new
   end
 
@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :short_description, :long_description, :photo)
+    params.require(:project).permit(:name, :short_description, :long_description, :photo, category_ids: [])
   end
 
   def find_project

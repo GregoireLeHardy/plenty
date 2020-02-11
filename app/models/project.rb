@@ -16,8 +16,8 @@ class Project < ApplicationRecord
   monetize :price_cents
 
   scope :recent, -> { order("created_at DESC") }
-  scope :active, -> { where(id: 13) }
-  scope :category, -> (categories) { joins(:categories).where('categories.name': categories) }
+  #scope :active, -> { where(id: 13) }
+  scope :category, -> (categories) { joins(:categories).where('categories.name': categories).distinct }
 
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?

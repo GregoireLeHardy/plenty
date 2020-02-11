@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
   def index
     @project = Project.find(params[:project_id])
     @articles = filtered_articles
-    @article = Article.filter(params.slice(:name))
   end
 
   def show
