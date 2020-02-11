@@ -13,6 +13,7 @@ class Project < ApplicationRecord
   validates :long_description, length: { maximum: 1500 }
   validates :name, presence: true
   validate :photo_validation
+  monetize :price_cents
 
   scope :recent, -> { order("created_at DESC") }
   scope :active, -> { where(id: 13) }
