@@ -18,6 +18,7 @@
         <p>Max 255 characters</p>
         <%= f.input :long_description, maxlength: 1500 %>
         <p>Max 1500 characters</p>
+        <%= f.input :category_ids, as: :check_boxes, collection: @categories %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>

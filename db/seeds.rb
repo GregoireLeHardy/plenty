@@ -70,7 +70,25 @@ puts 'And some fake articles linked to them'
   project_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   project_2.save!
 
+  category = Category.new(
+      name: 'humanitary',
+    )
+    category.save!
 
+  category = Category.new(
+      name: 'Education',
+    )
+    category.save!
+
+  category = Category.new(
+      name: 'Local',
+    )
+    category.save!
+
+  category = Category.new(
+      name: 'Environment',
+    )
+    category.save!
 
 end
 puts 'Finished!'

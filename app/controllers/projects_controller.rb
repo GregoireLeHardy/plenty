@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   # skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @projects = Project.all
-    @projects = Project.filter(params.slice(:name, :project_category))
+    @projects = filtered_projects
   end
 
   def show
@@ -18,6 +18,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @categories = Category.all
     @project = Project.new
   end
 
@@ -32,10 +33,18 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :short_description, :long_description, :photo)
+    params.require(:project).permit(:name, :short_description, :long_description, :photo, category_ids: [])
   end
 
   def find_project
     @project = Project.find(params[:id])
+  end
+
+  def filtered_projects
+    @projects = Project.all
+    @projects = @projects.recent if params[:filter] == 'recent'
+    @projects = @projects.active if params[:filter] == 'active'
+    @projects = @projects.category(params[:categories]) if params[:categories].present?
+    return @projects
   end
 end
