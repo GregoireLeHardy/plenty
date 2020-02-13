@@ -1,7 +1,11 @@
 <!-- app/views/articles/show.html.erb -->
-<div> <%= @article.title %> </div>
-<%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="article-container" style="justify-content: center" >
+  <div> <%= @article.title %> </div>
+  <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
 
-<div class="New-article">
-    <%= link_to "Create A New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
+  <div class="New-article">
+      <%= link_to "Create A New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
+  </div>
+
+  <%= render_shareable :static_link => true, :buttons=> ['twitter', 'facebook', 'linkedin'], :twitter => {:button_caption => 'Tweet this!'}, :facebook => {:button_caption => 'Share on Facebook!'}, :linkedin => {:button_caption => 'Share on LinkedIn!'}%>
 </div>
