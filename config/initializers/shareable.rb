@@ -10,7 +10,7 @@ Shareable.configure do |config|
   #config.turbolinks=false # set to true to enable turbolinks fixes. Requires jquery to work!
 
   ###############
-  facebook
+  #facebook
   ###############
   #config.app_id='' # required if using facebook button!
   #config.send= 'false'
