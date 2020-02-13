@@ -1,4 +1,4 @@
-<div class="navbar-lewagon" style="position: absolute">
+<div class="navbar-lewagon" style="position: absolute" color=#f6f6f6>
         <div class="nav-item active">
 
   <%= link_to "/"  do %>
@@ -13,19 +13,19 @@
       <% if user_signed_in? %>
 
         <div class="nav-item-active">
-        <%= link_to "https://plenty-wagon.herokuapp.com"  do %>
+        <%= link_to "/"  do %>
           <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1581452518/ButtonProfile_vnzvlz.png"%>
           <% end %>
         </div>
 
         <div class="nav-item-active">
-        <%= link_to "https://plenty-wagon.herokuapp.com/projects"  do %>
+        <%= link_to projects_path  do %>
           <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1581452263/ButtonProjects_ezpw4v.png"%>
           <% end %>
         </div>
 
         <div class="nav-item-active">
-        <%= link_to "https://plenty-wagon.herokuapp.com"  do %>
+        <%= link_to projects_path  do %>
           <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1581452263/Button_About_wadmq9.png"%>
           <% end %>
         </div>

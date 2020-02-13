@@ -53,4 +53,24 @@
 
 .row-no-padding .col-sm-4 {
   padding: 0;
+  text-color: white;
+}
+.card-plus {
+    color: red;
+    text-color: white;
+ }
+  .card-text {
+    display: none;
+    text-color: white;
+  }
+.square-cover:hover  {
+  padding: 0;
+  opacity: 50%;
+  filter: grayscale(5);
+  text-color: white;
+  .card-text {
+    display: block;
+    text-align: center;
+    text-color: white;
+  }
 }
