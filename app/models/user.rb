@@ -9,4 +9,17 @@ class User < ApplicationRecord
   has_many :donations
   has_many :projects, through: :follower_projects
   has_many :payments, through: :donations
+
+
+  def follow(project)
+    follower_projects << project
+  end
+
+  def unfollow(project)
+    following.delete(project)
+  end
+
+  def following?(project)
+    following.include?(project)
+  end
 end
