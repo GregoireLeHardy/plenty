@@ -1,0 +1,24 @@
+.filter-navbar {
+  overflow: visible;
+  height: 70px;
+  width: auto;
+  opacity: 0.748;
+  background: #f6f6f6;
+  color: black;
+  font-size: 16px;
+  font-color: white;
+  padding-top: 23px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  padding-right: 35px;
+  vertical-align: middle;
+  text-align: right;
+  z-index:0;
+}
+
+.filter-navbar a{
+  position:relative;
+  padding-left: 50px;
+  vertical-align: middle;
+
+}
