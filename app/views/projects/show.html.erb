@@ -1,19 +1,19 @@
-<!-- app/views/articles/show.html.erb -->
-<% background_url = cl_image_path @project.photo.key, width: 200, height: 250 %>
+<% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
 <div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
 
-
-  <%= cl_image_tag @project.photo.key, width: 400, height: 300, crop: :fill %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
   <div> <%= @project.long_description %> </div>
-  <p>Amount: <%= humanized_money_with_symbol(@project.price) %></p>
-  <div>
-    <%= form_tag donations_path do %>
-      <%= hidden_field_tag 'project_id', @project.id %>
-      <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-    <% end %>
+
+  <!-- integer field that is based on the form_for and customer input -->
+
+  <div class= col-2>
+      <%= simple_form_for  @donation do |f| %>
+      <%= f.input :doner_price %>
+      <%= f.input :project_id,  as: :hidden %>
+      <%= f.submit "Donate", class: "btn btn-primary" %>
+      <% end %>
   </div>
 </div>
 

@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     find_project
+    @donation = Donation.new(project_id: @project.id)
   end
 
   def create
