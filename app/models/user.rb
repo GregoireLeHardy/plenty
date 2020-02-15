@@ -23,7 +23,6 @@ class User < ApplicationRecord
   #   following.include?(project)
   # end
 
-
   def follow(project)
     follower_project.create(project_id: project.id)
   end
