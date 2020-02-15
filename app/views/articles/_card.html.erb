@@ -1,4 +1,4 @@
-<div class="container">
+<div class="article">
   <%= link_to project_article_path(article.project, article), class: "card-link" do %>
 
   <% if article.photo.attached? %>
@@ -6,12 +6,22 @@
   <% else %>
     <% background_url = 'https://source.unsplash.com/500x400/?people' %>
   <% end %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= background_url %>');">
-    <div class="card-category"><i class="fa fa-usd" aria-hidden="true"></i></div>
-      <h2  ><%= article.title %></h2>
-    <div class="card-description">
-      <h3  ><%= article.description %></h3>
+
+
+
+
+  <div class="article-card">
+    <div class="article-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= background_url %>');">
+    <div class="article-card">
+      <h1  ><%= article.title %></h1>
+      <p  ><%= article.description %></p>
     </div>
+  </div>
     <% end %>
+
+
+
+
   </div>
 </div>
+
