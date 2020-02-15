@@ -1,19 +1,21 @@
 class ProjectsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @projects = Project.all
+    @projects = policy_scope(Project)
     @projects = filtered_projects
   end
 
   def show
     find_project
     @donation = Donation.new(project_id: @project.id)
+    authorize @project
   end
 
   def create
     @project = Project.new(project_params_user)
     if @project.save!
       redirect_to project_path(@project)
+      authorize @project
     else
     end
   end
@@ -21,6 +23,7 @@ class ProjectsController < ApplicationController
   def new
     @categories = Category.all
     @project = Project.new
+    authorize @project
   end
 
   def create_article
@@ -36,6 +39,7 @@ class ProjectsController < ApplicationController
 
   def project_params_user
     project_params.merge(user_id: current_user.id)
+    authorize @project
   end
 
   def project_params
@@ -52,5 +56,6 @@ class ProjectsController < ApplicationController
     @projects = @projects.active if params[:filter] == 'active'
     @projects = @projects.category(params[:categories]) if params[:categories].present?
     return @projects
+    authorize @project
   end
 end

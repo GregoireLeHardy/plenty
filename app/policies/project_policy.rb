@@ -4,4 +4,24 @@ class ProjectPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def new?
+    return true
+  end
+
+  def create?
+    return true
+  end
+
+  def show?
+    return true
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def find_project?
+    return true
+  end
 end
