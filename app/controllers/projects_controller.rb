@@ -30,9 +30,17 @@ class ProjectsController < ApplicationController
     redirect_to new_project_article_path
   end
 
-  def publish
+  def edit
     find_project
-    @project.published == TRUE
+    authorize @project
+  end
+
+  def update
+    find_project
+    @project.update(project_params)
+    authorize @project
+
+    redirect_to project_path(@project)
   end
 
   private
@@ -43,7 +51,9 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :short_description, :long_description, :photo, category_ids: [])
+    permitted = [:name, :published,  :short_description, :long_description, :photo, category_ids: [] ]
+    permitted << :published if current_user.admin
+    params.require(:project).permit(permitted)
   end
 
   def find_project

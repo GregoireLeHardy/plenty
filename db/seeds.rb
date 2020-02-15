@@ -14,6 +14,17 @@ user = User.create!(
   password: 'password'
 )
 
+admin = User.create!(
+  email: 'admin@plenty.com',
+  password: 'password',
+  admin: true
+)
+
+user_1 = User.create!(
+  email: 'user@testing.com',
+  password: 'password'
+)
+
 puts 'user successfully created'
 
 puts 'Creating 6 fake projects...'
@@ -75,17 +86,17 @@ puts 'And some fake articles linked to them'
     )
     category.save!
 
-  category = Category.new(
+  category1 = Category.new(
       name: 'Education',
     )
     category.save!
 
-  category = Category.new(
+  category2 = Category.new(
       name: 'Local',
     )
     category.save!
 
-  category = Category.new(
+  category3 = Category.new(
       name: 'Environment',
     )
     category.save!

@@ -18,10 +18,14 @@ class ProjectPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    record.user == user || user.admin == true
   end
 
   def find_project?
     return true
+  end
+
+  def publish?
+    user.admin == true
   end
 end

@@ -1,21 +1,27 @@
 <% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
 <div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
-
+  <% if @project.published == false%>
+    <div class="alert alert-warning" role="alert">This project is pending to be published!</div>
+  <% else %>
+    <div class="alert alert-success" role="alert"> This project is published! </div>
+  <% end %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
   <div> <%= @project.long_description %> </div>
 
   <!-- integer field that is based on the form_for and customer input -->
-
-  <div class= col-2>
-      <%= simple_form_for  @donation do |f| %>
-      <%= f.input :doner_price %>
-      <%= f.input :project_id,  as: :hidden %>
-      <%= f.submit "Donate", class: "btn btn-primary" %>
-      <% end %>
+  <div>
+    <div class= col-2>
+        <%= simple_form_for  @donation do |f| %>
+        <%= f.input :doner_price %>
+        <%= f.input :project_id,  as: :hidden %>
+        <%= f.submit "Donate", class: "btn btn-primary" %>
+        <% end %>
+    </div>
   </div>
 </div>
+
 
 
 <div class="container test">
@@ -30,3 +36,7 @@
   </div>
   </div>
 </div>
+
+<button type="button", class="btn btn-secondary">
+  <%= link_to "Edit Project", edit_project_path(@project) %>
+</button>
