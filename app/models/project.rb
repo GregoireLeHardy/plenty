@@ -31,4 +31,8 @@ class Project < ApplicationRecord
       end
     end
   end
+
+  def followers
+    users
+  end
 end
