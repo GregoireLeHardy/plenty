@@ -1,9 +1,22 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
+@font-face {
+    font-family: 'banaue-extended';
+      src: font-url('banaue-extended-webfont.eot');
+
+    src: url('banaue-extended-webfont.woff2') format('woff2'),
+         url('banaue-extended-webfont.woff') format('woff'),
+         url('banaue-extended-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$my-font: "banaue-extended";
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Avenir", "sans-serif";
+$headers-font: "Avenir", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
