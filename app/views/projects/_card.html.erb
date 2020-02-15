@@ -13,5 +13,7 @@
     <div>
       <p class="card-text"> <%= project.short_description %></p>
     </div>
+
+    <%= render "shared/button_follow_project", project: project %>
   </div>
 <% end %>

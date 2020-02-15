@@ -1,6 +1,6 @@
 <% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
-<div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+<div class="background-projects" style="background-size: cover; background-image: url('<%= background_url %>');">
   <% if @project.published == false%>
     <div class="alert alert-warning" role="alert">This project is pending to be published!</div>
   <% else %>
@@ -8,7 +8,7 @@
   <% end %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
-  <div> <%= @project.long_description %> </div>
+  <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
 
   <!-- integer field that is based on the form_for and customer input -->
   <div>
