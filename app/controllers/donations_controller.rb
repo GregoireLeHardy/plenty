@@ -19,10 +19,12 @@ class DonationsController < ApplicationController
 
     donation.update(checkout_session_id: session.id)
     redirect_to new_donation_payment_path(donation)
+    authorize donation
   end
 
   def show
     @donation = current_user.donations.find(params[:id])
+    authorize @donation
   end
 
   def multiply(amount)
@@ -34,5 +36,6 @@ class DonationsController < ApplicationController
 
   def donation_params
     params.require(:donation).permit(:doner_price, :project_id)
+    authorize @donation
   end
 end
