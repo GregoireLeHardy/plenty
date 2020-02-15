@@ -8,7 +8,12 @@
   <% end %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
-  <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
+  <div>
+    <% if policy(@project).update? %>
+      <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
+    <% end %>
+  </div>
+
 
   <%= render "shared/button_follow_project", project: @project %>
 
@@ -20,7 +25,6 @@
       <% end %>
   </div>
 </div>
-
 
 
 <div class="container test">
@@ -35,7 +39,10 @@
   </div>
   </div>
 </div>
-
-<button type="button", class="btn btn-secondary">
-  <%= link_to "Edit Project", edit_project_path(@project) %>
-</button>
+<div>
+  <% if policy(@project).update? %>
+    <button type="button", class="btn btn-secondary">
+      <%= link_to "Edit Project", edit_project_path(@project) %>
+    </button>
+  <% end %>
+</div>

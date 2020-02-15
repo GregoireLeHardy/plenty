@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-
   def index
     @project = Project.find(params[:project_id])
     @articles = filtered_articles
@@ -8,11 +7,13 @@ class ArticlesController < ApplicationController
   def show
     @project = Project.find(params[:project_id])
     @article = Article.find(params[:id])
+    authorize @article
   end
 
   def new
    @project = Project.find(params[:project_id])
    @article = Article.new
+   authorize @article
   end
 
   def create
@@ -25,21 +26,25 @@ class ArticlesController < ApplicationController
       render 'new'
     end
     # @bikes = Bike.where(status: 'available')
+    authorize @article
   end
 
   def recent
     @article = Article.recent
     render action: :index
+    authorize @article
   end
 
   def active
     @article = Article.active
     render action: :index
+    authorize @article
   end
 
 # app/controllers/articles_controller.rb
   def article_params
-   params.require(:article).permit(:title, :description, :photo)
+    params.require(:article).permit(:title, :description, :photo)
+    authorize @article
   end
 
   private
@@ -52,5 +57,6 @@ class ArticlesController < ApplicationController
     else
       return @project.articles
     end
+    authorize @article
   end
 end
