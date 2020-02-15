@@ -2,17 +2,20 @@
   size: 1920px 1080px;
 }
 
-.banner {
+.background-home {
   background-image: url(https://res.cloudinary.com/dnizmljvi/image/upload/v1581015608/kyle-ellefson-NJ1DFbX7YVs-unsplash_stc3pd.jpg);
-  background-size: 1920px 1080px;
-  background-position: center;
-  background-repeat: none;
-  padding: 462px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: 1080px;
+    vertical-align: middle;
 }
 
 .container h1 {
   color: white;
   text-align: center;
+  vertical-align: middle;
 }
 
 .container p {
@@ -20,6 +23,7 @@
   opacity: .7;
   font-size: 20px;
   text-align: center;
+  vertical-align: middle;
 }
 
 // .home_picture h1 {

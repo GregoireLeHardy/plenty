@@ -18,24 +18,15 @@
 </div>
 
 
-
 <div class="container test">
-
-  <div class="page-header">
-    <h1>Check Our Articles</h1>
+  <div class="long-description">
+    <h1> ABOUT THIS PROJECT </h1>
+    <p> <br /><%= @project.long_description %> </p>
+    <h1> LAST UPDATES </h1>
+  <div class="article-card">
+    <% @project.articles.each do |article| %>
+    <%= render 'articles/card', article: article %>
+    <% end %>
   </div>
-
-  <div class="row" style="justify-content: center">
-    <div class="col-10">
-      <div class="container test-2">
-        <div class="row">
-          <% @project.articles.each do |article| %>
-            <%= render 'articles/card', article: article %>
-          <% end %>
-        </div>
-    </div>
-</div>
-
-<div class="New-article">
-    <%= link_to "Create A New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
+  </div>
 </div>

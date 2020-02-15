@@ -52,25 +52,30 @@
 */
 
 .row-no-padding .col-sm-4 {
+  position: relative;
   padding: 0;
   text-color: white;
+  vertical-align: middle;
+  text-align: center;
+  z-index:1;
 }
 .card-plus {
     color: red;
-    text-color: white;
+    vertical-align: middle;
  }
   .card-text {
     display: none;
     text-color: white;
   }
+
 .square-cover:hover  {
   padding: 0;
-  opacity: 50%;
-  filter: grayscale(5);
+  opacity: 10%;
+  filter: grayscale(500);
   text-color: white;
   .card-text {
     display: block;
-    text-align: center;
+    text-align: middle;
     text-color: white;
   }
 }

@@ -1,5 +1,9 @@
-<div class="filter-options">
+<div class="filter-navbar" style="padding-left: 90px;">
   <%= link_to "Latest", projects_path(filter: 'recent') %>
+  <%= link_to "Popular", projects_path(filter: 'recent') %>
+  <%= link_to "Nature", projects_path(filter: 'recent') %>
+  <%= link_to "People", projects_path(filter: 'recent') %>
+  <%= link_to "Animals", projects_path(filter: 'recent') %>
   <% Category.all.each do |category|  %>
     <%=  link_to category.name, projects_path(categories: [category.name]) %>
   <% end %>
