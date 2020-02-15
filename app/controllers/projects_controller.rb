@@ -27,6 +27,11 @@ class ProjectsController < ApplicationController
     redirect_to new_project_article_path
   end
 
+  def publish
+    find_project
+    @project.published == TRUE
+  end
+
   private
 
   def project_params_user

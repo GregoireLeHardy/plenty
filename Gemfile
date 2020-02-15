@@ -22,6 +22,8 @@ gem 'faker'
 gem 'money-rails'
 gem 'stripe'
 gem 'stripe_event'
+gem 'pundit'
+
 
 
 group :development do
