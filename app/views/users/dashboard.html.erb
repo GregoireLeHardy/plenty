@@ -1,0 +1,12 @@
+<div class="row row-no-padding">
+  <h1>My projects</h1>
+  <% current_user.following_projects.each do |project| %>
+  <div class="col-sm-4">
+      <div class="card card-plus" style="justify-content: center">
+        <div class="square-box">
+            <%= render 'projects/card', project: project %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
