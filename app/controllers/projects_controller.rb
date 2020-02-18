@@ -47,11 +47,10 @@ class ProjectsController < ApplicationController
 
   def project_params_user
     project_params.merge(user_id: current_user.id)
-    authorize @project
   end
 
   def project_params
-    permitted = [:name, :published,  :short_description, :long_description, :photo, category_ids: [] ]
+    permitted = [:name, :published, :short_description, :long_description, :photo, category_ids: []]
     permitted << :published if current_user.admin
     params.require(:project).permit(permitted)
   end

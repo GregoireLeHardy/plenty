@@ -1,8 +1,16 @@
 class ProjectPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      if user.admin?
+        scope.all
+      else
+        scope.where(user: user || :published)
+      end
     end
+  end
+
+  def project_params_user?
+    return true
   end
 
   def new?
