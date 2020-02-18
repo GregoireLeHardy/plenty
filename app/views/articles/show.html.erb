@@ -9,6 +9,8 @@
   </div>
 
   <div class="New-article">
+    <% if policy(@project).update? %>
       <%= link_to "Create A New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
+    <% end %>
   </div>
 </div>

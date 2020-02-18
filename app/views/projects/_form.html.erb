@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>Create a new project</h1>
+
+      <%= simple_form_for(project) do |f| %>
+       <!--  <% if @project.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @project.errors.full_messages.each do |message| %>
+                <li><% message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %> -->
+        <%= f.input :name %>
+        <%= f.input :short_description, maxlength: 255 %>
+        <p>Max 255 characters</p>
+        <%= f.input :long_description, maxlength: 1500 %>
+        <p>Max 1500 characters</p>
+        <%= f.input :category_ids, as: :check_boxes, collection: @categories %>
+        <%= f.input :photo, as: :file %>
+        <% if current_user.admin %>
+          <%= f.input :published %>
+        <% end %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ class FollowerProjectsController < ApplicationController
       format.html { redirect_to @project }
       format.js
     end
+    authorize follower_project
   end
 
   def destroy
@@ -15,6 +16,7 @@ class FollowerProjectsController < ApplicationController
       format.html { redirect_to @user }
       format.js
     end
+    authorize @follower_project
   end
 
   private

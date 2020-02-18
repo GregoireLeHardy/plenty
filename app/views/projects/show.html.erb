@@ -1,9 +1,19 @@
 <% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
 <div class="background-projects" style="background-size: cover; background-image: url('<%= background_url %>');">
+  <% if @project.published == false%>
+    <div class="alert alert-warning" role="alert">This project is pending to be published!</div>
+  <% else %>
+    <div class="alert alert-success" role="alert"> This project is published! </div>
+  <% end %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>
-  <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
+  <div>
+    <% if policy(@project).update? %>
+      <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
+    <% end %>
+  </div>
+
 
   <%= render "shared/button_follow_project", project: @project %>
 
@@ -28,4 +38,11 @@
     <% end %>
   </div>
   </div>
+</div>
+<div>
+  <% if policy(@project).update? %>
+    <button type="button", class="btn btn-secondary">
+      <%= link_to "Edit Project", edit_project_path(@project) %>
+    </button>
+  <% end %>
 </div>
