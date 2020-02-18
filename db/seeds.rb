@@ -35,7 +35,8 @@ puts 'And some fake articles linked to them'
     short_description: Faker::Lorem.paragraph(sentence_count: 2),
     long_description: Faker::Lorem.paragraph(sentence_count: 5),
     price_cents: 1500,
-    user_id: user.id
+    user_id: user.id,
+    published: true
   )
   file = URI.open('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
   project.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -64,7 +65,9 @@ puts 'And some fake articles linked to them'
     short_description: Faker::Lorem.paragraph(sentence_count: 2),
     long_description: Faker::Lorem.paragraph(sentence_count: 5),
     price_cents: 1500,
-    user_id: user.id
+    user_id: user.id,
+    published: true
+
   )
   file = URI.open('https://images.unsplash.com/photo-1469125155630-7ed37e065743?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
   project_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
@@ -75,7 +78,9 @@ puts 'And some fake articles linked to them'
     short_description: Faker::Lorem.paragraph(sentence_count: 2),
     long_description: Faker::Lorem.paragraph(sentence_count: 5),
     price_cents: 1500,
-    user_id: user.id
+    user_id: user.id,
+    published: true
+
   )
   file = URI.open('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
   project_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
