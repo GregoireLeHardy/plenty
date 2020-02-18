@@ -5,5 +5,6 @@ class UsersController < ApplicationController
     else
       @user = current_user
     end
+    authorize @user
   end
 end

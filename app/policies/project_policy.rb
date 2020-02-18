@@ -28,4 +28,8 @@ class ProjectPolicy < ApplicationPolicy
   def publish?
     user.admin == true
   end
+
+  def dashboard
+    return true
+  end
 end

@@ -16,4 +16,8 @@ class FollowerProjectPolicy < ApplicationPolicy
   def params_project_id
     return true
   end
+
+  def dashboard
+    return true
+  end
 end
