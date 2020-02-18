@@ -22,9 +22,11 @@
   <div class="row">
     <div class="col align-self-start data-box">
       <h4>Categories Supported</h4>
+      <%= pie_chart @hash_pie %>
     </div>
     <div class="col-8 align-self-end data-box">
       <h4>Your Monthly Support</h4>
+      <%#= column_chart current_user.donations.group_by_month(:created_at, format: "%a").count %>
     </div>
   </div>
 </div>
