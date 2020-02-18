@@ -1,5 +1,3 @@
-
-
 body, html {
   background: #f6f6ff;
   font-family: 'Avenir', sans-serif;
@@ -25,10 +23,10 @@ body, html {
 
 .btn {
   width: 180px;
-  height: 60px;
+  height: 40px;
   cursor: pointer;
   background: transparent;
-  border: 1px solid #91C9FF;
+  border: 1px solid white;
   outline: none;
   transition: 1s ease-in-out;
   position: center;
@@ -36,7 +34,7 @@ body, html {
   position: absolute;
   display: flex;
   justify-content: center;
-  align: middle;
+  text-align: middle;
 }
 
 svg {
@@ -59,7 +57,7 @@ svg {
   stroke-dashoffset: -480;
 }
 
-.btn span {
+.btn {
   color: white;
   font-size: 18px;
   font-weight: 100;
