@@ -1,10 +1,11 @@
 <% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
 <div class="background-projects" style="background-size: cover; background-image: url('<%= background_url %>');">
-  <% if @project.published == false%>
+  <% if @project.user_id == current_user.id && @project.published == false  %>
     <div class="alert alert-warning" role="alert">This project is pending to be published!</div>
-  <% else %>
+  <% elsif @project.user_id == current_user.id && @project.published == true%>
     <div class="alert alert-success" role="alert"> This project is published! </div>
+  <% else %>
   <% end %>
   <div> <%= @project.name %> </div>
   <div> <%= @project.short_description %> </div>

@@ -4,9 +4,13 @@ class ProjectPolicy < ApplicationPolicy
       if user.admin?
         scope.all
       else
-        scope.where(published: true)
+        scope.where(user: user || :published)
       end
     end
+  end
+
+  def project_params_user?
+    return true
   end
 
   def new?
