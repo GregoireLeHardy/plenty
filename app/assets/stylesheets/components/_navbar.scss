@@ -2,7 +2,7 @@
   grid-column: 1;
   overflow: visible;
   width: 70px;
-  height: 1200px;
+  height: 100%;
   color: #f6f6f6;
   opacity: 0.748;
   background: #f6f6f6;
@@ -12,6 +12,8 @@
   padding-left: 15px;
   padding-top: 15px;
   text-transform:uppercase;
+  position: sticky;
+  top: 0px;
 }
 
 .navbar-lewagon img {

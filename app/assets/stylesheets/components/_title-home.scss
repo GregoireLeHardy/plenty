@@ -1,10 +1,8 @@
 .title-home h1{
-  font-family: $my-font;
-  font-size: 150px;
+  font-family: "Avenir";
+  font-size: 25px;
   color: #f6f6f6;
   text-align: center;
-  vertical-align: middle;
-  padding-top: 650px;
 }
 
 .title-home p{
@@ -13,5 +11,11 @@
   font-size: 40px;
   color: #f6f6f6;
   text-align: center;
-  vertical-align: middle;
+}
+
+.title-home div {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
