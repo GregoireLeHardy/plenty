@@ -10,6 +10,8 @@ gem 'redis'
 
 gem 'devise'
 gem 'shareable'
+gem "chartkick"
+
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

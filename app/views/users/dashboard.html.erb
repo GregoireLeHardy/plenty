@@ -1,12 +1,51 @@
-<div class="row row-no-padding">
+<div class="mega-container">
+<!-- first tab -->
+<div class="container">
+  <div class="row">
+    <div class="col-sm align-self-start data-box">
+      <h4># of Projects Suported</h4>
+      <%= current_user.following_projects.count %>
+      <li><%= current_user.following_projects.name %></li>
+    </div>
+    <div class="col-sm align-self-center data-box">
+      <h4>Your Lifetime Support</h4>
+      <%= current_user.donations.count %> €
+    </div>
+    <div class="col-sm align-self-end data-box">
+      <h4>Your Current Points</h4>
+    </div>
+  </div>
+</div>
+
+<!-- second tab -->
+<div class="container">
+  <div class="row">
+    <div class="col align-self-start data-box">
+      <h4>Categories Supported</h4>
+      <%= pie_chart @hash_pie, id: "pie-chart", width: "300px", height: "150px"%>
+    </div>
+    <div class="col-8 align-self-end data-box">
+      <h4>Your Monthly Support</h4>
+      <%#= column_chart current_user.donations.group_by_month(:created_at, format: "%a").count %>
+    </div>
+  </div>
+</div>
+
+<!-- project list -->
+<div class="container" style="justify-content: center">
+  <div class="row">
   <h1>My projects</h1>
   <% current_user.following_projects.each do |project| %>
-  <div class="col-sm-4">
+  <div class="col-sm-12 align-self-center" style="justify-content: center">
       <div class="card card-plus" style="justify-content: center">
         <div class="square-box">
+          <li>
             <%= render 'projects/card', project: project %>
+          </li>
         </div>
       </div>
     </div>
   <% end %>
+  </div>
+  </div>
 </div>
