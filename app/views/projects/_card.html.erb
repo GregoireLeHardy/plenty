@@ -6,6 +6,7 @@
     <% background_url = 'https://source.unsplash.com/500x400/?cocktail' %>
   <% end %>
   <div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+
     <div>
       <i class="fa fa-usd" aria-hidden="true"></i>
     </div>
@@ -14,6 +15,9 @@
       <p class="card-text"> <%= project.short_description %></p>
     </div>
 
+        <div>
+      <h2 class="card-text"> TOTAL POINTS <%= project.calculate_points %></h2>
+    </div>
     <%= render "shared/button_follow_project", project: project %>
   </div>
 <% end %>

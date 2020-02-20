@@ -18,7 +18,6 @@ class Project < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
   #scope :active, -> { where(id: 13) }
   scope :category, -> (categories) { joins(:categories).where('categories.name': categories).distinct }
-
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?
     if photo.attached?
@@ -30,6 +29,10 @@ class Project < ApplicationRecord
         errors[:base] << 'Wrong format'
       end
     end
+  end
+
+  def calculate_points
+    followers.count + payments.count   # + sharings.count
   end
 
   def followers
