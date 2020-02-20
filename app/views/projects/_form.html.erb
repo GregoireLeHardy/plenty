@@ -1,27 +1,29 @@
-<div class="new-project-form" style="padding-top: 400px; padding-left: 400px; padding-right: 400px;">
-      <%= simple_form_for(project) do |f| %>
-       <!--  <% if @project.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @project.errors.full_messages.each do |message| %>
-                <li><% message %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %> -->
-        <%= f.input :name, label_html: {class: 'title-form'} %>
-        <%= f.input :short_description, placeholder: "Maximum 255 characters !", maxlength: 255, label_html: {class: 'title-form'} %>
-        <%= f.input :long_description, placeholder: "Maximum 1500 characters !", maxlength: 1500, label_html: {class: 'title-form'} %>
-        <%= f.input :category_ids, as: :hidden, collection: @categories, label_html: {class: 'title-form'} %>
-        <%= f.input :photo, as: :file, label_html: {class: 'title-form'} %>
-</div>
+<div class="background-projects">
+  <div class="new-project-form" style="padding-top: 150px; padding-left: 420px; padding-right: 420px; text-align: right;">
+    <%= simple_form_for(project) do |f| %>
+     <!--  <% if @project.errors.any? %>
+        <div class="errors-container">
+          <ul>
+            <% @project.errors.full_messages.each do |message| %>
+              <li><% message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %> -->
+      <%= f.input :name, label_html: {class: 'title-form'} %>
+      <%= f.input :short_description, placeholder: "Maximum 255 characters !", maxlength: 255, label_html: {class: 'title-form'} %>
+      <%= f.input :long_description, placeholder: "Maximum 1500 characters !", maxlength: 1500, label_html: {class: 'title-form'} %>
+      <%= f.input :category_ids, as: :hidden, collection: @categories, label_html: {class: 'title-form'} %>
+      <%= f.input :photo, as: :file, label_html: {class: 'title-form'} %>
+  </div>
 
 
-        <% if current_user.admin %>
-          <%= f.input :published %>
+          <% if current_user.admin %>
+            <%= f.input :published %>
+          <% end %>
+          <%= f.button :submit, class: 'btn' %>
         <% end %>
-        <%= f.button :submit, class: 'btn' %>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
