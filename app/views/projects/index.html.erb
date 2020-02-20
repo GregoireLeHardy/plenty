@@ -2,6 +2,7 @@
   <% Category.all.each do |category|  %>
     <%=  link_to category.name, projects_path(categories: [category.name]) %>
   <% end %>
+  <%= link_to "Popular Projects", projects_path(filter: 'popularity') %>
 </div>
 
 <div class="row row-no-padding">
