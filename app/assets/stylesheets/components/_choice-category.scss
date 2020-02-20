@@ -1,0 +1,33 @@
+h1 {
+}
+
+.button {
+  padding: 40px;
+  width: 180px;
+  border: 1px solid #dedede;
+  color: #a0a0a0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.button i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.button:hover i {
+  color: #586B2E;
+}
+
+.button.active {
+  color: inherit;
+  border-color: inherit;
+}
+
+.button.active i {
+  color: #52ACF4;
+}
