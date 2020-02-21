@@ -65,7 +65,8 @@ class ProjectsController < ApplicationController
     @projects = @projects.active if params[:filter] == 'active'
     @projects = @projects.category(params[:categories]) if params[:categories].present?
     @projects = @projects.order_by(&:calculate_points) if params[:popularity].present?
+    @projects = @projects.search_by_name(params[:query]) if params[:query].present?
     return @projects
-    authorize @project
+      authorize @project
   end
 end

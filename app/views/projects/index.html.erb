@@ -1,9 +1,29 @@
 <div class="filter-navbar" style="padding-left: 90px;">
-  <% Category.all.each do |category|  %>
-    <%=  link_to category.name, projects_path(categories: [category.name]) %>
-  <% end %>
-  <%= link_to "Popular Projects", projects_path(filter: 'popularity') %>
+  <div class="row">
+    <div class="col-sm-4 search-bar" style="justify-content: space-between">
+      <form class="form-inline padded">
+        <%= form_tag projects_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query], class: "form-control",
+          placeholder: "Find a project" %>
+          <%= submit_tag "Search", class: "btn btn-danger" %>
+        <% end %>
+      </form>
+    </div>
+
+    <div class="col-sm-4">
+      <% Category.all.each do |category|  %>
+        <%=  link_to category.name, projects_path(categories: [category.name]) %>
+      <% end %>
+    </div>
+
+    <div class="col-sm-4">
+      <%= link_to "Filter by popularity", projects_path(filter: 'popularity') %>
+    </div>
+  </div>
 </div>
+
+
 
 <div class="row row-no-padding">
   <% policy_scope(@projects).each do |project| %>
