@@ -1,4 +1,4 @@
-<div class="filter-navbar" style="padding-left: 90px;">
+<div class="filter-navbar">
   <% Category.all.each do |category|  %>
     <%=  link_to category.name, projects_path(categories: [category.name]) %>
   <% end %>
