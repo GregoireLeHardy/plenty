@@ -1,10 +1,22 @@
 .title-form {
-  font-family: $my-font;
-  font-size: 37px;
-  color: black;
-  text-align: right;
+  font-family: "Avenir";
+  font-size: 17px;
+  color: white;
+  text-align: left;
+}
+
+.title-form p{
+  font-family: "Avenir";
+  font-size: 10px;
+  color: white;
+  text-align: left;
+}
+
+.title-form button{
+  font-size: 10px;
 }
 
 .category-selected {
-  background-color: #D6D0D4;
+  background-color: black;
+  opacity: 0.50;
 }
