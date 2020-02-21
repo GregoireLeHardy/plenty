@@ -15,6 +15,9 @@ class Project < ApplicationRecord
   validate :photo_validation
   monetize :price_cents
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name, against: :name
+
   scope :recent, -> { order("created_at DESC") }
   #scope :active, -> { where(id: 13) }
   scope :category, -> (categories) { joins(:categories).where('categories.name': categories).distinct }
