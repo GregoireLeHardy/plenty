@@ -86,7 +86,7 @@ article = Article.new(
   article.save!
 
 project_1 = Project.new(
-  name:    "Improving primary forest proection",
+  name:    "Improving primary forest protection",
   short_description: "Act against illegal logging of protected rainforests in the ",
   long_description: Faker::Lorem.paragraph(sentence_count: 10),
   price_cents: 1500,
