@@ -39,4 +39,8 @@ class User < ApplicationRecord
     projects
   end
 
+  def user_points
+    following_projects.count + payments.count   # + sharings.count
+  end
+
 end
