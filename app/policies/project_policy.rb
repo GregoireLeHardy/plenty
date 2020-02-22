@@ -4,11 +4,20 @@ class ProjectPolicy < ApplicationPolicy
       if user.admin?
         scope.all
       else
-        scope.where(user: user || :published)
+        scope.where(published: true)
       end
     end
   end
 
+# class PostPolicy < ApplicationPolicy
+#   def permitted_attributes
+#     if user.admin? || user.owner_of?(post)
+#       [:title, :body, :tag_list]
+#     else
+#       [:tag_list]
+#     end
+#   end
+# end
   def project_params_user?
     return true
   end
