@@ -6,27 +6,28 @@
     <div>
       <h1><%= @article.title %></h1>
     </div>
-
-    <div class="shareable">
-    <%= render_shareable :static_link => true, :buttons=> ['twitter', 'facebook', 'linkedin'], :twitter => {:button_caption => 'Tweet this!'}, :facebook => {:button_caption => 'Share on Facebook!'}, :linkedin => {:button_caption => 'Share on LinkedIn!'}%>
-    </div>
-
-    <div class="article-actions">
-      <div>
-        <% if policy(@project).update? %>
-          <%= link_to "Edit Article", edit_project_article_path(@article), class: "btn btn-danger btn-lg" %>
-        <% end %>
-      </div>
-      <div>
-        <% if policy(@project).update? %>
-          <%= link_to "New Article", new_project_article_path(@project), class: "btn btn-danger btn-lg" %>
-        <% end %>
-      </div>
-    </div>
+  </div>
+</div>
+<div class="shareable">
+  <%= render_shareable :static_link => true, :buttons=> ['twitter', 'facebook', 'linkedin'], :twitter => {:button_caption => 'Tweet this!'}, :facebook => {:button_caption => 'Share on Facebook!'}, :linkedin => {:button_caption => 'Share on LinkedIn!'}%>
+</div>
+<div class="article-actions">
+  <div>
+    <%= link_to "Return to Project", project_path(@project), class: "button-grey" %>
+  </div>
+  <div>
+    <% if policy(@project).update? %>
+      <%= link_to "Edit Article", edit_project_article_path(@article), class: "button-grey" %>
+    <% end %>
+  </div>
+  <div>
+    <% if policy(@project).update? %>
+      <%= link_to "New Article", new_project_article_path(@project), class: "button-grey" %>
+    <% end %>
   </div>
 </div>
 
-<div class="article-long-description">
+<div class="long-description">
   <h2>
     <p><%= @article.description %></p>
   </h2>
