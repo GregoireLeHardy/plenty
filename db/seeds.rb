@@ -194,9 +194,18 @@ category_project6 = ProjectCategory.new(
     category_id: category2.id
 )
 category_project6.save!
+
+Project.all.each do |pr|
+  (0..5).to_a.sample.times do
+    price = (0..10000).to_a.sample
+    donation = pr.donations.create(user: User.all.sample, state: :approved, price_cents: price, doner_price: price/100.0)
+    Payment.create(donation: donation, cent: price)
+  end
+end
 puts 'Finished!'
 
 
+Project.joins(:payment).select('count(payments.id)').group_by('projects.id')
 
 # file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
 # article = Article.new(title: 'NES', body: "A great console")

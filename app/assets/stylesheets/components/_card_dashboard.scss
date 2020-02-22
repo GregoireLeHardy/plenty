@@ -1,0 +1,15 @@
+.square-cover:hover  {
+  padding: 0;
+  opacity: 10%;
+  filter: grayscale(500);
+  text-color: white;
+  height: 100%;
+  .card-text {
+    display: block;
+    font-family:$my-font;
+    font-size:45px;
+    margin-top: 35%;
+    text-align: middle;
+    text-color: white;
+  }
+}
