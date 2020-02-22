@@ -1,0 +1,33 @@
+.background-articles {
+  background-size: cover;
+}
+
+.article-container h1 {
+  color: white;
+  font-size: 32px;
+  justify-content: center;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  padding-left: 200px;
+  padding-right: 56px;
+}
+
+.shareable {
+  color: white;
+  padding-left: 200px;
+  text-align: right;
+}
+
+.article-long-description {
+  justify-content: center;
+  padding-top: 56px;
+  padding-left: 100px;
+}
+
+.article-actions {
+  display: flex;
+  justify-content: space-evenly;
+  color: black;
+}
+
+
