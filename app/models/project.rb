@@ -1,4 +1,7 @@
 class Project < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_by_name, against: :name, using: { tsearch: { any_word: true } }
+
   belongs_to :user
   has_many :articles
   has_many :donations
@@ -18,6 +21,7 @@ class Project < ApplicationRecord
   scope :recent, -> { order("created_at DESC") }
   #scope :active, -> { where(id: 13) }
   scope :category, -> (categories) { joins(:categories).where('categories.name': categories).distinct }
+
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?
     if photo.attached?

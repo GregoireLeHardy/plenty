@@ -11,6 +11,8 @@ gem 'redis'
 gem 'devise'
 gem 'shareable'
 gem "chartkick"
+gem 'pg_search'
+
 
 
 gem 'autoprefixer-rails'
