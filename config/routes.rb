@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'pages/home'
   resources :follower_projects
   resources :projects do
-    resources :articles, only: [:show, :index, :create, :new, :update, :delete]
+    resources :articles, only: [:show, :index, :create, :new,:edit, :update, :delete]
   end
   resources :donations, only: [:show, :create] do
     resources :payments, only: :new
