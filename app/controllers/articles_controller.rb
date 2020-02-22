@@ -44,7 +44,6 @@ class ArticlesController < ApplicationController
 # app/controllers/articles_controller.rb
   def article_params
     params.require(:article).permit(:title, :description, :photo)
-    authorize @article
   end
 
   private

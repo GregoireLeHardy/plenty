@@ -14,7 +14,9 @@
       <div>
         <%= render 'shared/navbar' %>
         <%= render 'shared/flashes' %>
-        <%= yield %>
+        <div class="gen-layout">
+         <%= yield %>
+        </div>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>

@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Create a new project</h1>
+<div class="background-projects">
 
+  <div class="create-picture" style="margin-top: 60px">
+
+    <div class="new-project-form" style="padding-bottom: 150px; padding-right:400px; text-align: left;>
       <%= simple_form_for(project) do |f| %>
        <!--  <% if @project.errors.any? %>
           <div class="errors-container">
@@ -13,18 +13,40 @@
             </ul>
           </div>
         <% end %> -->
-        <%= f.input :name %>
-        <%= f.input :short_description, maxlength: 255 %>
-        <p>Max 255 characters</p>
-        <%= f.input :long_description, maxlength: 1500 %>
-        <p>Max 1500 characters</p>
-        <%= f.input :category_ids, as: :check_boxes, collection: @categories %>
-        <%= f.input :photo, as: :file %>
-        <% if current_user.admin %>
-          <%= f.input :published %>
-        <% end %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+        <%= f.input :name, label_html: {class: 'title-form'} %>
+        <%= f.input :short_description, placeholder: "Max 255 characters", maxlength: 255, label_html: {class: 'title-form'} %>
+        <%= f.input :long_description, placeholder: "Max 1500 characters", maxlength: 1500, label_html: {class: 'title-form'} %>
+        <%= f.input :category_ids, as: :hidden, collection: @categories, label_html: {class: 'title-form'} %>
+        <%= f.input :photo, as: :file, label_html: {class: 'title-form'}, :input_html => {:style=> 'font-size: 15px'}%>
+       <div class="choice-category">
+      <div class="row justify-content-center">
+        <div class="col-sm-12 text-center" style="font-size: 12px">
+          <div class="d-flex flex-wrap justify-content-center pt-4">
+            <% @categories.each do |cat|  %>
+              <a data-category-id='<%= cat.id  %>' class="button">
+                <i class="<%= cat.logo_class %>"></i>
+                <small><%= cat.name %></small>
+              </a>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
+    <script>
+      document.querySelectorAll('[data-category-id]').forEach(item => {
+        item.addEventListener('click', e => {
+          document.querySelectorAll('[data-category-id]').forEach(categoryTab => categoryTab.classList.remove('category-selected'))
+          e.target.classList.add('category-selected')
+          document.querySelector('input#project_category_ids').value = e.target.dataset.categoryId
+        })
+      })
+    </script>
+  </div>
+  <div class="title-form" style="padding-top: 610px">
+   <% if current_user.admin %>
+    <%= f.input :published %>
+      <% end %>
+    <%= f.button :submit, class: 'btn' %>
+      <% end %>
   </div>
 </div>
