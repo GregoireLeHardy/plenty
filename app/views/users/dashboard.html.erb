@@ -19,7 +19,7 @@
           </div>
           <div class="col-sm align-self-center data-box">
             <h4>Your Lifetime Support</h4>
-            <h2><%= current_user.donations.count %> €</h2>
+            <h2><%= current_user.payments.sum(:cent)/100.0 %> €</h2>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
       <div class="third-block">
         <div class="col-sm align-self-end graph-box">
           <h4>Amount Given By Project</h4>
-          <%= bar_chart Project.includes(:payments).group('projects.name').sum('payments.cent').map {|key, val| [key, val / 100] }.to_h %>
+          <%= bar_chart current_user.payments.includes(donation: :project).group('projects.name').sum('payments.cent').map {|key, val| [key, val / 100] }.to_h %>
         </div>
       </div>
 

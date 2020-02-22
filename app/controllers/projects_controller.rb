@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+
+
   def index
     @projects = policy_scope(Project)
     @projects = filtered_projects
@@ -64,9 +66,8 @@ class ProjectsController < ApplicationController
     @projects = @projects.recent if params[:filter] == 'recent'
     @projects = @projects.active if params[:filter] == 'active'
     @projects = @projects.category(params[:categories]) if params[:categories].present?
-    @projects = @projects.order_by(&:calculate_points) if params[:popularity].present?
     @projects = @projects.search_by_name(params[:query]) if params[:query].present?
+    @projects = @projects.sort_by(&:calculate_points).reverse if params[:filter] == 'popularity'
     return @projects
-      authorize @project
   end
 end
