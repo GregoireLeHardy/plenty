@@ -5,22 +5,22 @@ Shareable.configure do |config|
   ## Valid names are: twitter facebook linkedin pinterest google_plus reddit tumblr stumble_upon
   #config.names = %w[ twitter facebook linkedin pinterest google_plus reddit tumblr stumble_upon ]
 
-  config.static_link=true # renders html links instead of javascript buttons.
+  #config.static_link=true # renders html links instead of javascript buttons.
   #config.button_only=false # omit initializing javacript code. Only button code is rendered.
   #config.turbolinks=false # set to true to enable turbolinks fixes. Requires jquery to work!
 
   ###############
-  #facebook
+  ##facebook
   ###############
   #config.app_id='' # required if using facebook button!
   #config.send= 'false'
-  #config.layout='' # 'standard', 'button_count', 'button' or 'box_count'. '' defaults to 'standard'.
+  #config.layout='standard' # 'standard', 'button_count', 'button' or 'box_count'. '' defaults to 'standard'.
   #config.show_faces='' # 'true' or 'false'. '' defaults to 'false'. Don't set to 'true', if kid_directed_site is also 'true'.
   #config.action='' # 'like' or 'recommend'. '' defaults to 'like'.
   #config.font=''
   #config.colorscheme='' # 'light' or 'dark'. '' defaults to 'light'.
   #config.ref=''
-  config.share='true' # 'true' or 'false'. '' defaults to 'false'.
+  #config.share='true' # 'true' or 'false'. '' defaults to 'false'.
   #config.kid_directed_site='' # 'true' or 'false'. '' defaults to 'false'. Facebook assumes your site is not kid friendly.
 
   ###############
@@ -66,7 +66,7 @@ Shareable.configure do |config|
   #config.points = '1' # '0' to '5'. Only used when btnsrc is not blank.
 
   ###############
-  ##twitter
+  #twitter
   ###############
   #config.via='' # screen name of the user to attribute the tweet to.
   #config.text='' # default tweet text. If blank, defaults to value of config.title.
@@ -91,7 +91,7 @@ Shareable.configure do |config|
   ##shared configuration options
   ###############
   #config.width='80' # used by facebook, google_plus and tumblr.
-  #config.title= '' # used by linkedin, pinterest, reddit, stumbleupon and tumblr.
+  #config.title= 'Test' # used by linkedin, pinterest, reddit, stumbleupon and tumblr.
   #config.description='' # used by linkedin and tumblr.
   #config.size='medium' # used by twitter and google_plus.
   ## google_plus config.size can be 'small', 'medium', 'standard' and 'tall'. Default is 'standard'. Shareable uses 'medium'.

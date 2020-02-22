@@ -10,9 +10,9 @@ class UsersController < ApplicationController
         if @hash_pie[cat.name].nil?
           @hash_pie[cat.name] = 1
         else
-            @hash_pie[cat.name] += 1
+          @hash_pie[cat.name] += 1
         end
-    end
+      end
     end
     authorize @user
   end

@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   def show
     @project = Project.find(params[:project_id])
-    @article = Article.find(params[:id])
+    find_article
     authorize @article
   end
 
@@ -14,6 +14,20 @@ class ArticlesController < ApplicationController
    @project = Project.find(params[:project_id])
    @article = Article.new
    authorize @article
+  end
+
+  def edit
+    @project = Project.find(params[:project_id])
+    find_article
+    authorize @article
+  end
+
+  def update
+    find_article
+    @article.update(article_params)
+    authorize @article
+
+    redirect_to project_article_path(@article)
   end
 
   def create
@@ -47,6 +61,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def find_article
+    @article = Article.find(params[:id])
+  end
 
   def filtered_articles
     if params[:filter] == 'recent'

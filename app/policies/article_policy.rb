@@ -9,6 +9,14 @@ class ArticlePolicy < ApplicationPolicy
     return true
   end
 
+  def edit?
+    update?
+  end
+
+  def update?
+    record.project.user == user || user.admin == true
+  end
+
   def create?
     record.project.user == user || user.admin == true
   end
