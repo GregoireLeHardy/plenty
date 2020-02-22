@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm align-self-start data-box">
-      <h4># of Projects Suported</h4>
+      <h4># of Projects Followed</h4>
       <%= current_user.following_projects.count %>
       <li><%= current_user.following_projects.name %></li>
     </div>
@@ -13,6 +13,7 @@
     </div>
     <div class="col-sm align-self-end data-box">
       <h4>Your Current Points</h4>
+        <%= current_user.user_points %></h2>
     </div>
   </div>
 </div>
@@ -21,12 +22,12 @@
 <div class="container">
   <div class="row">
     <div class="col align-self-start data-box">
-      <h4>Categories Supported</h4>
+      <h4>Categories Followed</h4>
       <%= pie_chart @hash_pie, id: "pie-chart", width: "300px", height: "150px"%>
     </div>
     <div class="col-8 align-self-end data-box">
-      <h4>Your Monthly Support</h4>
-      <%#= column_chart current_user.donations.group_by_month(:created_at, format: "%a").count %>
+      <h4>The categories you support</h4>
+      <%= bar_chart @projects.group(:name).sum(:payments) %>
     </div>
   </div>
 </div>
