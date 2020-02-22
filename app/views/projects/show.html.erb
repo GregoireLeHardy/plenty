@@ -14,17 +14,17 @@
       <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
     <% end %>
   </div>
-
-
-  <%= render "shared/button_follow_project", project: @project %>
-
-  <div class= "col-2">
-      <%= simple_form_for  @donation do |f| %>
-      <%= f.input :doner_price %>
-      <%= f.input :project_id,  as: :hidden %>
-      <%= f.submit "Donate", class: "btn btn-primary" %>
-      <% end %>
+  <div>
+    <%= render "shared/button_follow_project", project: @project %>
   </div>
+</div>
+
+<div class= "donation-section">
+    <%= simple_form_for  @donation do |f| %>
+    <%= f.input :doner_price, label: 'Donation Amount' %>
+    <%= f.input :project_id,  as: :hidden %>
+    <%= f.submit "Donate", class: "button-grey" %>
+    <% end %>
 </div>
 
 
