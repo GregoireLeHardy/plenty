@@ -42,4 +42,8 @@ class Project < ApplicationRecord
   def followers
     users
   end
+
+  def followed_by?(user)
+    (followers || []).include?(user)
+  end
 end

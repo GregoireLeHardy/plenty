@@ -11,7 +11,7 @@
   <div> <%= @project.short_description %> </div>
   <div>
     <% if policy(@project).update? %>
-      <div class="create-article"> <%= link_to "+", new_project_article_path(@project) %> </div>
+      <div class="create-article"> <%= link_to "+", new_project_article_path(@project)%> </div>
     <% end %>
   </div>
 

@@ -13,7 +13,7 @@
             </ul>
           </div>
         <% end %> -->
-        <%= f.input :name, label_html: {class: 'title-form'} %>
+        <%= f.input :name, placeholder: "Max 25 characters", maxlength: 25, label_html: {class: 'title-form'} %>
         <%= f.input :short_description, placeholder: "Max 255 characters", maxlength: 255, label_html: {class: 'title-form'} %>
         <%= f.input :long_description, placeholder: "Max 1500 characters", maxlength: 1500, label_html: {class: 'title-form'} %>
         <%= f.input :category_ids, as: :hidden, collection: @categories, label_html: {class: 'title-form'} %>

@@ -5,8 +5,9 @@ class FollowerProjectsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to @project }
       format.js
+      format.json { render json: { is_followed: @project.followed_by?(current_user) } }
     end
-    authorize follower_project
+    authorize @project
   end
 
   def destroy

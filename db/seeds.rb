@@ -30,7 +30,7 @@ puts 'user successfully created'
 puts 'creating categories'
 
 category = Category.new(
-    name: 'humanitary'
+    name: 'Humanitary'
   )
 category.save!
 
@@ -56,7 +56,7 @@ puts 'Creating 6 fake projects...'
 puts 'And some fake articles linked to them'
 
 project = Project.new(
-  name:    "Provide Gift & food to 700 Street Children",
+  name:    "Provide food to 700 Street Children",
   short_description: "With a small donation of 10€ per months, you can enable a child to got to school",
   long_description: Faker::Lorem.paragraph(sentence_count: 10),
   price_cents: 1500,

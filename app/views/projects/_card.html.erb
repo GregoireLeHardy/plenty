@@ -6,14 +6,47 @@
     <% background_url = 'https://source.unsplash.com/500x400/?cocktail' %>
   <% end %>
 
-  <div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
-    <div>
-      <i class="fa fa-usd" aria-hidden="true"></i>
-      <h2 class="card-text"><%= project.name %>
-    </div>
-    <div>
-      <%= project.short_description %>
-      <h2 style="margin-top: 15px; font-family: Avenir, font-size:10px, font-weight:bold"><%= project.calculate_points %> popularity points </h2>
+  <div>
+    <div class="square-cover">
+
+      <div class="square-cover-background" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');"></div>
+
+      <div class="square-description">
+        <div style="padding-top: 20px; text-align: right; margin-right: 30px; font-family: Avenir; font-size: 30px; font-weight: bold; color: white;">
+          <i class="fa fa-usd" aria-hidden="true"></i>
+          <%= project.calculate_points %>
+        </div>
+
+        <div>
+          <i class="fa fa-usd" aria-hidden="true"></i>
+          <h2 class="card-text" style="vertical-align: middle; align-items: center; font-size:35px; padding-right: 100px; padding-left: 100px; color: white;">
+            <%= project.name %>
+          </h2>
+        </div>
+
+        <div style="vertical-align: middle; align-items: center; font-size:15px; padding-right: 100px; padding-left: 100px; padding-bottom: -75px;">
+          <i class="fa fa-usd" aria-hidden="true"></i>
+          <%= project.short_description %>
+        </div>
+
+      </div>
+      <div class="square-actions" style="position:absolute; bottom:25px; right:20px;">
+        <%= link_to project_path(project)  do %>
+        <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/c_thumb,w_200,g_face/v1582390049/money_z1ty08.png", style:"width:40px;height:40px" %>
+        <% end %>
+
+      </div>
+      <div class="square-actions" style="position:absolute; bottom:25px; right:70px; ">
+
+
+        <a class="like-button <%= project.followed_by?(current_user) ? 'is-active' : '' %>" data-project-id="<%= project.id %>" style="">
+          <i class="material-icons not-liked bouncy">favorite_border</i>
+          <i class="material-icons is-liked bouncy">favorite</i>
+          <span class="like-overlay"></span>
+        </a>
+      </div>
+
     </div>
   </div>
 <% end %>
+
