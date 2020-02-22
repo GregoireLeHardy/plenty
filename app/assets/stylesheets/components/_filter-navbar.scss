@@ -1,19 +1,19 @@
 .filter-navbar {
   overflow: visible;
   height: 70px;
-  width: auto;
+  width: 100%;
   opacity: 0.748;
   background: #f6f6f6;
-  color: black;
+  color: #f6f6f6;
   font-size: 16px;
-  font-color: white;
-  padding-top: 23px;
+  color: white;
   padding-bottom: 15px;
   padding-left: 10px;
   padding-right: 35px;
   vertical-align: middle;
   text-align: right;
-  z-index:0;
+  text-decoration: none;
+  vertical-align:middle;
 }
 
 .search-bar {
@@ -22,4 +22,10 @@
 
 .btn-danger {
   background: #1EDD88;
+}
+
+.col-sm-4-navbar a{
+  padding-right: 70px;
+  text-align: right;
+  position: right;
 }

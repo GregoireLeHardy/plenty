@@ -1,28 +1,23 @@
-<div class="filter-navbar" style="padding-left: 90px;">
+<div class="filter-navbar" style="color: #F0F0F0; background: #F0F0F0; padding-left: 90px;">
   <div class="row">
-    <div class="col-sm-4 search-bar" style="justify-content: space-between">
-      <form class="form-inline padded">
+    <div class="col-sm-6 search-bar" style="justify-content: space-between; align-items: middle;">
+      <form class="form-inline padded" style="padding-top: 15px; color: #F0F0F0; background: #F0F0F0;" >
         <%= form_tag projects_path, method: :get do %>
           <%= text_field_tag :query,
           params[:query], class: "form-control",
           placeholder: "Find a project" %>
-          <%= submit_tag "Search", class: "btn btn-danger" %>
         <% end %>
       </form>
     </div>
 
-    <div class="col-sm-4">
+    <div class="col-sm-4-navbar" style="color: black; font-weight: bold; text-align: right; text-align: right; padding-top: 23px;">
       <% Category.all.each do |category|  %>
         <%=  link_to category.name, projects_path(categories: [category.name]) %>
       <% end %>
-    </div>
-
-    <div class="col-sm-4">
-      <%= link_to "Filter by popularity", projects_path(filter: 'popularity') %>
+        <%= link_to "Most Popular", projects_path(filter: 'popularity') %>
     </div>
   </div>
 </div>
-
 
 
 <div class="row row-no-padding">
@@ -47,4 +42,26 @@
   }
   window.addEventListener("resize", computeSquareHeight);
   computeSquareHeight();
+
+  const csrf_token = document.querySelector('meta[name=csrf-token]').content
+
+  document.querySelectorAll('.like-button').forEach(item => {
+    item.addEventListener('click', e => {
+      const isActive = item.classList.value.includes('is-active')
+      if (isActive) return
+      fetch("/follower_projects", {
+        method: 'post',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': csrf_token
+        },
+        body: JSON.stringify({ follower_project: { project_id: item.dataset.projectId }})
+      })
+      .then(response => response.json())
+      .then((data) => {
+        if (data.is_followed) item.classList.add('is-active')
+      })
+    })
+  })
 </script>
