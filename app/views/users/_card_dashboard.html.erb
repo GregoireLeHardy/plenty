@@ -1,0 +1,18 @@
+<%= link_to project_path(project) do %>
+  <!-- image url has to change with the url of the profile pic -->
+  <% if project.photo.attached? %>
+    <% background_url = cl_image_path project.photo.key, width: 400, height: 500 %>
+  <% else %>
+    <% background_url = 'https://source.unsplash.com/500x400/?cocktail' %>
+  <% end %>
+
+  <div class="square-cover" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+    <div>
+      <i class="fa fa-usd" aria-hidden="true"></i>
+      <h2 class="card-text"><%= project.name %>
+    </div>
+    <div>
+      <%= project.short_description %>
+    </div>
+  </div>
+<% end %>

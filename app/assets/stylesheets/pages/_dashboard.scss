@@ -1,7 +1,14 @@
 .container {
   padding: 30px;
 }
+.content-container {
+  margin-left: 33%;
+}
 
+.user-picture {
+  position: fixed;
+  height: 100vh;
+}
 
 .data-box {
   overflow: hidden;
@@ -12,6 +19,36 @@
   height: 200px;
 }
 
-h4 {
+.graph-box {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  height: 400px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.projects-container h1 {
+  margin-bottom: 35px;
+  margin-top: 35px;
+}
+
+.data-box h2{
   margin-top: 5px;
+  font-family: Avenir;
+  font-size: 64px;
+  font-weight: bold;
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+  }
+
+h4 {
+  margin-top: 10px;
+  font-family: Avenir;
+  font-size: 24px;
+  font-weight: bold;
 }

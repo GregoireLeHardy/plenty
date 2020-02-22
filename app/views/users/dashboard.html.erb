@@ -1,60 +1,60 @@
-<div class="user-picture">
-  <div class="title-home" style="font-size: 10px">
-      <div> <p>Money given: </p> </div>
-      <div> <p>Project followed:</p> </div>
-      <div> <p>Yes. You are awesome.</p> </div>
-  </div>
-</div>
-
 <div class="mega-container">
-<!-- first tab -->
-<div class="container">
   <div class="row">
-    <div class="col-sm align-self-start data-box">
-      <h4># of Projects Followed</h4>
-      <%= current_user.following_projects.count %>
-      <li><%= current_user.following_projects.name %></li>
-    </div>
-    <div class="col-sm align-self-center data-box">
-      <h4>Your Lifetime Support</h4>
-      <%= current_user.donations.count %> €
-    </div>
-    <div class="col-sm align-self-end data-box">
-      <h4>Your Current Points</h4>
-        <%= current_user.user_points %></h2>
-    </div>
-  </div>
-</div>
 
-<!-- second tab -->
-<div class="container">
-  <div class="row">
-    <div class="col align-self-start data-box">
-      <h4>Categories Followed</h4>
-      <%= pie_chart @hash_pie, id: "pie-chart", width: "300px", height: "150px"%>
-    </div>
-    <div class="col-8 align-self-end data-box">
-      <h4>The categories you support</h4>
-      <%= bar_chart @projects.group(:name).sum(:payments) %>
-    </div>
-  </div>
-</div>
-
-<!-- project list -->
-<div class="container" style="justify-content: center">
-  <div class="row">
-  <h1>My projects</h1>
-  <% current_user.following_projects.each do |project| %>
-  <div class="col-sm-12 align-self-center" style="justify-content: center">
-      <div class="card card-plus" style="justify-content: center">
-        <div class="square-box">
-          <li>
-            <%= render 'projects/card', project: project %>
-          </li>
-        </div>
+    <div class="col-md-4 user-picture">
+      <div class="title-home" style="font-size: 10px">
+<!--           <div> <p>Money given: </p> </div>
+          <div> <p>Project followed:</p> </div> -->
+          <div> <p>Yes. You are awesome.</p> </div>
       </div>
     </div>
-  <% end %>
-  </div>
+
+    <div class="col-md-8 content-container">
+
+      <div class="first-block" style="margin-top: 10px">
+        <div class="row">
+          <div class="col-sm align-self-start data-box">
+            <h4># of Projects Followed</h4>
+            <h2><%= current_user.following_projects.count %></h2>
+          </div>
+          <div class="col-sm align-self-center data-box">
+            <h4>Your Lifetime Support</h4>
+            <h2><%= current_user.donations.count %> €</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="second-block">
+        <div class="row">
+          <div class="col-sm align-self-end data-box">
+            <h4>Your User Score</h4>
+            <h2><%= current_user.user_points %></h2>
+          </div>
+          <div class="col-sm align-self-start data-box">
+            <h4>Followed Categories</h4>
+            <%= pie_chart @hash_pie, id: "pie-chart", width: "300px", height: "150px", legend: "left"%>
+          </div>
+        </div>
+      </div>
+
+      <div class="third-block">
+        <div class="col-sm align-self-end graph-box">
+          <h4>Amount Given By Project</h4>
+          <%= bar_chart Project.includes(:payments).group('projects.name').sum('payments.cent').map {|key, val| [key, val / 100] }.to_h %>
+        </div>
+      </div>
+
+<!-- project list -->
+      <div class="projects-container">
+        <h1>My projects</h1>
+          <% current_user.following_projects.each do |project| %>
+            <div class="col-sm align-self-end" style="justify-content: center">
+              <div class="square-box">
+                <%= render 'card_dashboard', project: project %>
+              </div>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
