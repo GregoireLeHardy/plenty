@@ -16,14 +16,9 @@
         <%=  link_to category.name, projects_path(categories: [category.name]) %>
       <% end %>
         <%= link_to "Most Popular", projects_path(filter: 'popularity') %>
-                    <div class="create-article" style="padding-top:98%; padding-left: 90%;">     <%= link_to new_project_path do %>
-      <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582669193/Sans_titre-1_pusnx2.png"%>
-      <% end %>
-    </div>
     </div>
   </div>
 </div>
-
 
 <div class="row row-no-padding">
   <% @projects.each do |project| %>
@@ -35,6 +30,10 @@
       </div>
     </div>
   <% end %>
+        <span class="create-article" style="right:50px; bottom: 50px; z-index: 1; position:fixed;">     <%= link_to new_project_path do %>
+      <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582669193/Sans_titre-1_pusnx2.png"%>
+      <% end %>
+      </span>
 </div></div>
 
 <script>
@@ -70,3 +69,6 @@
     })
   })
 </script>
+
+
+
