@@ -31,22 +31,23 @@
           </div>
         </div>
       </div>
+      <div>
+        <script>
+          document.querySelectorAll('[data-category-id]').forEach(item => {
+            item.addEventListener('click', e => {
+              document.querySelectorAll('[data-category-id]').forEach(categoryTab => categoryTab.classList.remove('category-selected'))
+              e.target.classList.add('category-selected')
+              document.querySelector('input#project_category_ids').value = e.target.dataset.categoryId
+            })
+          })
+        </script>
+      </div>
+      <div class="title-form" style="padding-top: 26px">
+       <% if current_user.admin %>
+        <%= f.input :published %>
+          <% end %>
+        <%= f.button :submit, class: 'btn' %>
+          <% end %>
+      </div>
     </div>
-    <script>
-      document.querySelectorAll('[data-category-id]').forEach(item => {
-        item.addEventListener('click', e => {
-          document.querySelectorAll('[data-category-id]').forEach(categoryTab => categoryTab.classList.remove('category-selected'))
-          e.target.classList.add('category-selected')
-          document.querySelector('input#project_category_ids').value = e.target.dataset.categoryId
-        })
-      })
-    </script>
-
-  <div class="title-form" style="padding-top: 610px">
-   <% if current_user.admin %>
-    <%= f.input :published %>
-      <% end %>
-    <%= f.button :submit, class: 'btn' %>
-      <% end %>
-  </div>
 </div>
