@@ -48,3 +48,17 @@
 .background-projects img {
   size: 1920px 500px;
 }
+
+.short-title-container {
+  text-align: center;
+  padding-left: 64px;
+}
+
+.last-updates-container {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+  font-style: bold;
+  color: black;
+}
+
