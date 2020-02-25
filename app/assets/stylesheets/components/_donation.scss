@@ -3,3 +3,26 @@
   column: 2;
   width: 200px;
 }
+
+
+.container-checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 500px;
+}
+
+
+.checkout-content {
+  color: white;
+}
+
+.donation-checkout h1 p {
+  color: white;
+}
+
+.checkout-image {
+  padding-left: 50px;
+}
