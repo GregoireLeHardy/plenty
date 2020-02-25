@@ -2,22 +2,25 @@
   overflow: visible;
   height: 70px;
   width: 100%;
-  opacity: 0.748;
   background: #f6f6f6;
   color: #f6f6f6;
   font-size: 16px;
   color: white;
   padding-bottom: 15px;
   padding-left: 10px;
-  padding-right: 35px;
+  padding-right: 5px;
   vertical-align: middle;
   text-align: right;
   text-decoration: none;
   vertical-align:middle;
+  position: fixed;
+  top: 0px;
+  z-index:1;
 }
 
 .search-bar {
   justify-content: space-between;
+  margin-left:-40px;
 }
 
 .btn-danger {
@@ -28,4 +31,5 @@
   padding-right: 70px;
   text-align: right;
   position: right;
+  margin-right: 3px;
 }
