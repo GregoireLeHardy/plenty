@@ -1,24 +1,20 @@
 <% background_url = cl_image_path @project.photo.key, width: 400, height: 800 %>
 
-<div class="background-projects" style="background-size: cover; background-image: url('<%= background_url %>');">
-  <% if @project.user_id == current_user.id && @project.published == false  %>
+<div class="background-projects" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+  <% if @project.user == current_user && @project.published == false  %>
     <div class="alert alert-warning" role="alert">This project is pending to be published!</div>
-  <% elsif @project.user_id == current_user.id && @project.published == true%>
+  <% elsif @project.user == current_user && @project.published == true%>
     <div class="alert alert-success" role="alert"> This project is published! </div>
   <% else %>
   <% end %>
-  <div> <%= @project.name %> </div>
-  <div> <%= @project.short_description %> </div>
-  <div>
-    <% if policy(@project).update? %>
-      <div class="create-article"> <%= link_to "+", new_project_article_path(@project)%> </div>
-    <% end %>
+  <div class="short-title-container">
+    <div> <%= @project.name %> </div>
+    <div> <%= @project.short_description %> </div>
   </div>
   <div>
     <%= render "shared/button_follow_project", project: @project %>
   </div>
 </div>
-
 <div class= "donation-section">
     <%= simple_form_for  @donation do |f| %>
     <%= f.input :doner_price, label: 'Donation Amount' %>
@@ -32,7 +28,14 @@
   <div class="long-description">
     <h1> ABOUT THIS PROJECT </h1>
       <p> <%= @project.long_description %> </p>
-    <h1> LAST UPDATES </h1>
+    <div class="last-updates-container">
+      <div>
+        <% if policy(@project).update? %>
+          <div class="create-article"> <%= link_to "+", new_project_article_path(@project)%> </div>
+        <% end %>
+      </div>
+      <div> LAST UPDATES </div>
+    </div>
   <div class="article-card">
     <% @project.articles.each do |article| %>
     <%= render 'articles/card', article: article %>
@@ -47,3 +50,5 @@
     </button>
   <% end %>
 </div>
+
+

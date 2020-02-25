@@ -1,15 +1,14 @@
 class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-
   def index
-    @projects = policy_scope(Project)
-    @projects = filtered_projects
+    @projects = policy_scope filtered_projects
   end
 
   def show
     find_project
     @donation = Donation.new(project_id: @project.id)
+
     authorize @project
   end
 
@@ -61,8 +60,18 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
+  def set_projects_by_user
+    if current_user&.admin
+      @projects = Project.all
+    elsif current_user
+      @projects = Project.where(published: true).or.where(user_id: current_user.id)
+    else
+      @projects = Project.where(published: true)
+    end
+  end
+
   def filtered_projects
-    @projects = Project.all
+    set_projects_by_user
     @projects = @projects.recent if params[:filter] == 'recent'
     @projects = @projects.active if params[:filter] == 'active'
     @projects = @projects.category(params[:categories]) if params[:categories].present?
