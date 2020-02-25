@@ -2,7 +2,7 @@
 <div class="containers">
 <div class="filter-navbar" style="color: #F0F0F0; background: #F0F0F0; padding-left: 90px; margin-left: -20px;">
   <div class="row">
-    <div class="col-sm-6 search-bar" style="justify-content: space-between; align-items: middle;">
+    <div class="col-sm-5 search-bar" style="justify-content: space-between; align-items: right; right:30px;">
       <form class="form-inline padded" style="padding-top: 15px; color: #F0F0F0; background: #F0F0F0;" >
         <%= form_tag projects_path, method: :get do %>
           <%= text_field_tag :query,
@@ -11,12 +11,15 @@
         <% end %>
       </form>
     </div>
-
-    <div class="col-sm-4-navbar" style="color: black; font-weight: bold; text-align: right; text-align: right; padding-top: 23px;">
+    <div class="col-sm-4-navbar" style="color: black; font-weight: bold; align-items: right; margin-top: 23px;">
       <% Category.all.each do |category|  %>
         <%=  link_to category.name, projects_path(categories: [category.name]) %>
       <% end %>
         <%= link_to "Most Popular", projects_path(filter: 'popularity') %>
+                    <div class="create-article" style="padding-top:98%; padding-left: 90%;">     <%= link_to new_project_path do %>
+      <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582669193/Sans_titre-1_pusnx2.png"%>
+      <% end %>
+    </div>
     </div>
   </div>
 </div>
