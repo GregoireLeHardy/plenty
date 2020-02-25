@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
     if current_user&.admin
       @projects = Project.all
     elsif current_user
-      @projects = Project.where(published: true).or.where(user_id: current_user.id)
+      @projects = Project.where(published: true).or(current_user.projects)
     else
       @projects = Project.where(published: true)
     end
