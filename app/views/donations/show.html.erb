@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-checkout">
   <div class="row py-4">
     <div class="col-md-3"><%= image_tag @donation.project.photo, width: '100%' %></div>
     <div class="col">
@@ -9,7 +9,6 @@
         <li><strong>TOTAL</strong> <%= humanized_money_with_symbol @donation.price_cents %></li>
         </li>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
     </div>
   </div>
 </div>
