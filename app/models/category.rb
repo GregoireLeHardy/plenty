@@ -4,10 +4,10 @@ class Category < ApplicationRecord
 
   def logo_class
     case name
-    when 'social' then "fas fa-people-carry"
-    when 'humanitary' then "fas fa-pen"
-    when 'nature' then "fas fa-tree"
-    when 'education' then "fas fa-car"
+    when 'Local' then "fas fa-globe-africa"
+    when 'Humanitary' then "fas fa-people-carry"
+    when 'Environment' then "fas fa-leaf"
+    when 'Education' then "fas fa-book"
     else 'fas fa-plus'
     end
   end

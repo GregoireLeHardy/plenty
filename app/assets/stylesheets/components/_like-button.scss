@@ -1,10 +1,17 @@
+
+$grey: #7D8082;
+$muted-grey: #999;
+$heart: #B02246;
+$white: #fff;
+
+
 .like-button {
     cursor: pointer;
     position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #7f8081;
+    background: $grey;
     // opacity:0.5;
     display: flex;
     justify-content: center;

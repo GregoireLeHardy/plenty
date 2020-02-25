@@ -51,6 +51,12 @@
 }
 */
 
+.containers {
+  width:95%;
+  margin-left:75px;
+  margin-top:70px;
+}
+
 .row-no-padding .col-sm-4 {
   position: relative;
   padding: 0;
@@ -82,33 +88,35 @@
 }
 
 .square-cover:hover  {
-  a:hover {
-    text-decoration: none;
+    a:hover {
+      text-decoration: none;
+      color: white;
+    }
+    padding: 0;
     color: white;
-  }
-  padding: 0;
-  color: white;
-  position: relative;
-  top: 0;
-  left: 0;
-  .card-text {
-    display: block;
-    font-family:$my-font;
-    margin-top: 35%;
-    text-align: middle;
-    color: white;
-  }
-  .square-description, .square-actions {
-    display: inherit;
-    text-align: middle;
-    font-family: "Avenir";
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    border-radius: 15px;
-  }
-  .square-cover-background {
-    opacity: 10%;
-    filter: grayscale(500);
-  }
+    position: relative;
+    top: 0;
+    left: 0;
+
+    .card-text {
+      display: block;
+      font-family:$my-font;
+      margin-top: 35%;
+      text-align: middle;
+      color: white;
+    }
+    .square-description, .square-actions {
+      display: inherit;
+      text-align: middle;
+      font-family: "Avenir";
+      font-size: 15px;
+      font-weight: bold;
+      color: white;
+      border-radius: 15px;
+    }
+    .square-cover-background {
+      background: transparent;
+    }
+
+
 }
