@@ -179,7 +179,7 @@ article = Article.new(
 
 project_3 = Project.new(
   name:    "Helping teenagers reconnect to nature",
-  short_description: "With live of teenagers being increasingly tied to screens, the availability of outdoor activities in urban spaces gets ever more important.",
+  short_description: "With life of teenagers being increasingly tied to screens, the availability of outdoor activities in urban spaces gets ever more important.",
   long_description: Faker::Lorem.paragraph(sentence_count: 20),
   price_cents: 1500,
   user_id: user.id,
@@ -217,7 +217,7 @@ article = Article.new(
   article.save!
 
 project_4 = Project.new(
-  name:    "Desaster recovery: saving Australia from wildfires.",
+  name:    "Disaster recovery: saving Australia from wildfires.",
   short_description: "High winds and drought conditions are causing wildfires to spread rapidly through Australia, prompting mass evacuations, destroying homes and killing millions of animals.",
   long_description: Faker::Lorem.paragraph(sentence_count: 20),
   price_cents: 1500,
