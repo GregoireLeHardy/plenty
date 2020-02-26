@@ -1,5 +1,4 @@
 .long-description {
-  text-align: left;
   font-size: 15px;
   padding-bottom: 75px;
   padding-left: 200px;
@@ -8,14 +7,16 @@
 
 .long-description h1 {
   text-align: right;
-  font-size: 25px;
+  font-size: 30px;
   font-style: bold;
   color: black;
   padding-top: 25px;
   padding-bottom: 25px;
+  font-family:$my-font;
 }
 
 .long-description p {
+  font-family:"Avenir";
   text-align: left;
   font-size: 15px;
   padding-bottom: 50px;

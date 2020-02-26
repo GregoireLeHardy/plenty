@@ -1,18 +1,24 @@
 .article-card {
-  font-size: 15px;
-  border: 1px;
-  border-radius: 5px;
-  margin-bottom: 15px;
-  height: 230px;
+  font-size: 12px;
+  border-radius: 50%;
+  margin-bottom: 30px;
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .article-card h1 {
-  font-size: 28px;
+  font-size: 14px;
   font-style: bold;
   text-align: center;
+  vertical-align: middle;
+  font-family: "Avenir";
   color: white;
 }
 
 .article-card img {
-  image-size: 100px 100px;
+  image-size: 150px 150px;
+  border-radius: 50%;
 }
