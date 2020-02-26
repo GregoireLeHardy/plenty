@@ -1,13 +1,12 @@
 .button {
-  background-color: white;
+  background-color: black;
 }
 
 .button-grey {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: #f6f6f6;
   border: 2px solid #e7e7e7; /* grey */
-  padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 15px;
 } /* Gray */
 
 .button-grey:hover {
