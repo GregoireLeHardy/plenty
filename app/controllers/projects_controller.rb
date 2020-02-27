@@ -8,6 +8,11 @@ class ProjectsController < ApplicationController
   def show
     find_project
     @donation = Donation.new(project_id: @project.id)
+    donation_sum = []
+    donation_sum = @project.donations
+
+    donation_sum.each do |d|
+      donation_sum << d.doner_price
 
     authorize @project
   end
