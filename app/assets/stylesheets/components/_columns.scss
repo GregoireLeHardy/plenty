@@ -13,10 +13,12 @@
             border-radius: 25px;
             background-color:#f6f6f6;
             margin:20px;
+            opacity:0.9;
             vertical-align: middle;
             display: inline-block
         }
         #nd-box {
+            opacity:0.9;
             float:left;
             width:29vw;
             height:500px;
@@ -27,6 +29,7 @@
             display: inline-block
         }
         #rd-box {
+            opacity:0.9;
             float:left;
             width:29vw;
             height:500px;
@@ -43,6 +46,4 @@
 .background-square {
   width:100vw;
   padding-left: 70px;
-  background: none !important;
-  background-color: none !important;
 }
