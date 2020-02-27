@@ -22,3 +22,29 @@
   padding-bottom: 50px;
   color: black;
 }
+
+.project-box {
+  font-size: 15px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.project-box h1 {
+  text-align: right;
+  font-size: 30px;
+  font-style: bold;
+  color: black;
+  text-align:right;
+  padding-top:100px;
+  padding-left:25px;
+  font-family:$my-font;
+}
+
+.project-box p {
+  font-family:"Avenir";
+  text-align: left;
+  font-size: 15px;
+  padding-bottom: 100px;
+  color: black;
+}

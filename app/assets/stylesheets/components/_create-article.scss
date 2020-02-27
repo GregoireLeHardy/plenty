@@ -1,7 +1,36 @@
+.create-article-1 {
+  border:1px;
+  border-color: white;
+  position: absolute;
+  bottom: 5vh;
+  left: 93vw;
+  size: 40px 40px;
+}
+
+.create-article-2 {
+  border:1px;
+  border-color: white;
+  position: absolute;
+  bottom: 5vh;
+  left:88vw;
+}
+
+.create-article-3 {
+  border:1px;
+  border-color: white;
+  position: absolute;
+  bottom: 5vh;
+  left:83vw;
+}
+
+.create-article-3 img {
+  width:58px;
+  height:58px;
+}
+
 .create-article :hover{
   color:black;
   opacity:0.7;
   border:1px;
   border-color: white;
-  bottom:30px
 }
