@@ -1,22 +1,25 @@
 <!-- app/views/payments/new.html.erb -->
 <div class="container-checkout">
-  <div class="row py-4">
-    <div class="col-md-3"><%= image_tag @donation.project.photo, width: '100%' %></div>
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Donate to <strong><%= @donation.project.name %></strong> for <strong><%= humanized_money_with_symbol @donation.price_cents %></strong></p>
-      <button id="pay" class="btn btn-light">Pay</button>
+  <div class="container-checkout-in">
+    <div class="container-checkout-in-content"></div>
+      <div class="row py-4">
+        <div class="col-md-3"><%= image_tag @donation.project.photo, width: '100%' %></div>
+        <div class="col" style="font-family: $my-font">
+          <h1>Checkout summary</h1>
+          <p>Donate to <strong><%= @donation.project.name %></strong> for <strong><%= humanized_money_with_symbol @donation.price_cents %></strong></p>
+          <button id="pay" class="btn btn-light">Pay</button>
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @donation.checkout_session_id %>'
-          });
-        });
-      </script>
-    </div>
+          <script src="https://js.stripe.com/v3/"></script>
+          <script>
+            const paymentButton = document.getElementById('pay');
+            paymentButton.addEventListener('click', () => {
+              const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+              stripe.redirectToCheckout({
+                sessionId: '<%= @donation.checkout_session_id %>'
+              });
+            });
+          </script>
+        </div>
+      </div>
   </div>
 </div>
