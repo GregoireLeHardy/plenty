@@ -48,3 +48,23 @@
   border:1px;
   border-color: white;
 }
+
+.write-article-box {
+  border: 1px solid white;
+  border-radius: 15px;
+    padding-left:80px;
+  padding-right:80px;
+  padding-top:60px;
+  padding-bottom:140px;
+}
+.write-article-box p {
+  font-family: "Avenir";
+  color: #grey;
+  border: 1px solid #gray;
+  margin:50px;
+  border-radius: 15px;
+  padding-left:50px;
+  padding-right:50px;
+  padding-top:50px;
+  padding-bottom:50px;
+}
