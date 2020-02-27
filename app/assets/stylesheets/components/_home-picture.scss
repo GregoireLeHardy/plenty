@@ -25,6 +25,21 @@
   color:white;
 }
 
+.project-page-picture-2 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size:65px;
+  color:white;
+  position: absolute;
+}
+
 .create-picture {
   background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582285102/wolfgang-hasselmann-eqSsHfGMTQU-unsplash-3_cp2naq.jpg");
   background-repeat: no-repeat;

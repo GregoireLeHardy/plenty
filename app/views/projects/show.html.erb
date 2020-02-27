@@ -1,3 +1,4 @@
+
 <% background_url = cl_image_path @project.photo.key, width:"100vw", height:"100vh" %>
 
 <div class="project-page-picture" style="padding-left: 90px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
@@ -7,9 +8,9 @@
     <div class="alert alert-success" role="alert"> This project is published! </div>
   <% else %>
   <% end %>
-  <div class="short-title-container" style="margin-top: 230px">
+  <div class="short-title-container" style="margin-top: 230px; margin-left: 100px; margin-right:120px;">
     <div> <%= @project.name %> </div>
-    <div style="font-family:Avenir; font-size:21px"> <%= @project.short_description %> </div>
+    <div style="font-family:Avenir; font-size:20px; margin-bottom: 160px; padding-right: 100px: padding-left:100px;"> <%= @project.short_description %> </div>
   </div>
 <!--   <div>
     <%= render "shared/button_follow_project", project: @project %>
@@ -40,37 +41,44 @@
   </div>
 </div>
 
-<div class="background-square" style="width:100vw; background: none !important;">
-  <div class="container" style="width:98vw; left:90;">
+<div class="project-page-picture-2" style="position: absolute; padding-left: 0px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+  <div class="background-square" style="width:100vw;">
+    <div class="container" style="width:98vw; left:90;">
 
-    <div id="st-box" style="vertical-align: middle; display: inline-block; padding-top: 100px;">
-      <div class="circle" style="align-items: center; vertical-align: middle; display: inline-block">
-        <div class="donation-section" style="padding-top: 100px;">
-          <%= simple_form_for  @donation do |f| %>
-          <%= f.input :doner_price, placeholder: "Make a donation"%>
-          <%= f.input :project_id,  as: :hidden %>
+      <div id="st-box" style="vertical-align: middle; display: inline-block; padding-top: 0px;">
+        <div class="project-box" style="padding-left:50px; padding-right:50px; margin-bottom:-40px;">
+          <h1> - donate - </h1>
+        </div>
+        <div class="circle" style="align-items: center; vertical-align: middle; display: inline-block;">
+          <div class="donation-section" style="padding-bottom:150px">
+            <div style="margin-top: -155px;">
+            <%= simple_form_for  @donation do |f| %>
+            <%= f.input :doner_price, placeholder: "Make a donation"%>
+            <%= f.input :project_id,  as: :hidden %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="nd-box" style="display: inline-block">
+        <div class="project-box" style="vertical-align: middle; padding-left:50px; padding-right:50px">
+          <h1> - about this project - </h1>
+          <p style="vertical-align: middle; margin-top:0px; text-align:right;"> <%= @project.long_description %> </p>
+        </div>
+      </div>
+
+      <div id="rd-box">
+        <div class="project-box" style="padding-left:50px; padding-right:50px;">
+          <h1> - last updates - </h1>
+        <div class="article-card">
+          <% @project.articles.each do |article| %>
+          <%= render 'articles/card', article: article %>
           <% end %>
         </div>
       </div>
-    </div>
 
-    <div id="nd-box" style="display: inline-block">
-      <div class="project-box" style="vertical-align: middle; padding-left:50px; padding-right:50px">
-        <h1> - about this project </h1>
-        <p style="vertical-align: middle; margin-top:-30px; text-align:right;"> <%= @project.long_description %> </p>
-      </div>
     </div>
-
-    <div id="rd-box">
-      <div class="project-box" style="padding-left:50px; padding-right:50px;">
-        <h1> - last updates </h1>
-      <div class="article-card">
-        <% @project.articles.each do |article| %>
-        <%= render 'articles/card', article: article %>
-        <% end %>
-      </div>
-    </div>
-
   </div>
 </div>
 
