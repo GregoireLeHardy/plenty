@@ -63,7 +63,7 @@ project = Project.new(
   user_id: user.id,
   published: true
 )
-file = URI.open('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+file = URI.open('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
 project.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project.save!
 
@@ -72,7 +72,7 @@ article = Article.new(
     description: Faker::Lorem.paragraph(sentence_count: 20),
     project_id: project.id
   )
-  file = URI.open('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+  file = URI.open('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
   article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article.save!
 
@@ -107,7 +107,7 @@ project_1 = Project.new(
   user_id: user.id,
   published: true
 )
-file = URI.open('https://images.unsplash.com/photo-1469125155630-7ed37e065743?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
+file = URI.open('https://images.unsplash.com/photo-1469125155630-7ed37e065743?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80')
 project_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_1.save!
 
@@ -147,7 +147,7 @@ project_2 = Project.new(
   user_id: user.id,
   published: true
 )
-file = URI.open('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80')
+file = URI.open('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80')
 project_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_2.save!
 
