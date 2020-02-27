@@ -31,14 +31,16 @@
       </span>
     <% end %>
   </div>
-  <div>
+  <!-- <div>
     <% if policy(@project).update? %>
-      <span class="create-article-1">     <%= link_to new_project_article_path(@project) do %>
-        <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582731151/facebook_n0xokh.png"%>
-        <% end %>
-      </span>
+    <span class="create-article-1">
+      <a class="like-button <%= @project.followed_by?(current_user) ? 'is-active' : '' %>" data-project-id="<%= @project.id %>" style="">
+          <i class="material-icons not-liked bouncy">favorite_border</i>
+          <i class="material-icons is-liked bouncy">favorite</i>
+        </a>
+        </span>
     <% end %>
-  </div>
+  </div> -->
 </div>
 
 <div class="project-page-picture-2" style="position: absolute; padding-left: 0px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
