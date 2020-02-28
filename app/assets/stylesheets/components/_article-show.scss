@@ -1,5 +1,8 @@
 .background-articles {
-  background-size: cover;
+  float: center;
+  height:250px;
+  width: 800px;
+  background-position: center;
 }
 
 .article-container h1 {
@@ -14,8 +17,14 @@
 
 .shareable {
   color: white;
-  padding-left: 200px;
-  text-align: right;
+  vertical-align: middle;
+  text-align:center;
+  float:right;
+}
+
+.article-actions {
+  color: none;
+  float:right;
 }
 
 .article-long-description p {
@@ -29,11 +38,39 @@
   color: #f6f6f6;
 }
 
-.article-actions {
-  display: flex;
-  justify-content: flex-start;
-  color: black;
-  padding-left: 200px;
+.article-title {
+  float: top;
+  height:250px;
+  width: 550px;
+  border-radius:15px;
+  font-family:$my-font;
+  color:gray;
 }
 
+.article-title h1 {
+  float: top;
+  height:250px;
+  width: 550px;
+  border-radius:15px;
+  font-family:$my-font;
+  color:gray;
+}
+
+
+.article-title p {
+  font-size: 10px;
+  font-family:"Avenir";
+  color:gray;
+  height:250px;
+  width: 550px;
+}
+
+
+.article-title h2 {
+  font-size: 10px;
+  font-family:"Avenir";
+  color:#f6f6f6;
+  height:250px;
+  width: 550px;
+}
 
