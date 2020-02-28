@@ -1,16 +1,21 @@
-<% if article.photo.attached? %>
-  <% background_url = cl_image_path article.photo.key %>
-<% else %>
-  <% background_url = 'https://source.unsplash.com/500x400/?people' %>
-<% end %>
 
-
-<div class="article-card" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+<div>
   <%= link_to project_article_path(article.project, article), class: "card-link" do %>
+    <% if article.photo.attached? %>
+      <% background_url = cl_image_path article.photo.key %>
+    <% else %>
+      <% background_url = 'https://source.unsplash.com/500x400/?people' %>
+    <% end %>
+
+
+    <div class="article-card" style="background-size: cover; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+    </div>
+
+    <div class="article-card-text">
+      <h1><%= article.title %></h1>
+      <p><time datetime="2020-02-25">February 25th</time></p>
+    </div>
   <% end %>
 </div>
 
-<div class="article-card-text">
-  <h1><%= article.title %></h1>
-  <p><time datetime="2020-02-25">February 25th</time></p>
-</div>
+
