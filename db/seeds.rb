@@ -29,35 +29,38 @@ puts 'user successfully created'
 
 puts 'creating categories'
 
-category = Category.new(
+humanitary = Category.new(
     name: 'Humanitary'
   )
-category.save!
+humanitary.save!
 
-category1 = Category.new(
+education = Category.new(
     name: 'Education'
   )
-category1.save!
+education.save!
 
-category2 = Category.new(
+local = Category.new(
     name: 'Local'
   )
-category2.save!
+local.save!
 
-category3 = Category.new(
+environment = Category.new(
     name: 'Environment'
   )
-category3.save!
+environment.save!
 
 puts 'categories successfully created'
 
 
-puts 'Creating 6 fake projects...'
+puts 'Creating 22 fake projects...'
 puts 'And some fake articles linked to them'
+start_time = Time.now
+
+
 
 project = Project.new(
   name:    "Provide food to 700 Street Children",
-  short_description: "With a small donation of 10€ per months, you can enable a child to got to school",
+  short_description: "With a small donation of 10€ per months/ child, you can finance 2 meals a day for an entire month.",
   long_description: Faker::Lorem.paragraph(sentence_count: 20),
   price_cents: 1500,
   user_id: user.id,
@@ -67,37 +70,19 @@ file = URI.open('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ix
 project.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project.save!
 
-article = Article.new(
-    title:    "Act against illegal logging of protected rainforests",
-    description: Faker::Lorem.paragraph(sentence_count: 20),
+article_project = Article.new(
+    title:    "700 hundred meals served on Christmas Eve.",
+    description: "We are thrilled to announce that Kenya Connect is a Runner Up Prizewinner of the 2019 Pan-African Award for Entrepreneurship in Education. With an emphasis on sustainability, the awards offer monetary prizes as an investment in organisations whose inspirational work is transforming the futures of African Youth.
+ Supported by The Saville Foundation and managed by Teach A Man To Fish, the Pan-African Awards combine the aims and expertise of both organisations. Kenya Connect was selected out of 340 organizations and the only NGO in Kenya to win this prestigious award. Read more about the award and other winners HERE
+ As a Runner Up, Kenya Connect will receive $5,000 plus Co-Founder and Executive Director, Kenya James Musyoka will travel to London in March to accept the award and participate in engaging seminars and programs. The award prize will help us launch the Mighty Moringa Tree project at six partner schools. ""We are honored and humbled by this award,"" commented James Musyoka. ""This distinction recognizes the work of Kenya Connect as a leader in innovative programs to strengthen education in rural Kenya.""
+ The Mighty Moringa Tree will be launched in January as a project that incorporates environmental stewardship and micro enterprise through planting the drought resistant moringa tree that produces a highly nutritious leaves and seeds that can be brewed as a drink or added to soups and stews. Students will follow in the tradition of Wangari Maathai by planting the trees to help mitigate climate change while creating a highly nutrious food source.
+ As a donor to Kenya Connect we thought you'd be excited to hear our news. Your support means that we can continue to provide dynamic programs that prepare our students to be engaged citizens and learners.
+ We will keep you posted as this project gets underway. Thanks for being a part of our Kenya Connect family!",
     project_id: project.id
   )
-  file = URI.open('https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
-
-article = Article.new(
-    title:    "Off and Running in 2019!",
-    description: "Happy 2019! We are grateful to our GlobalGiving donors for supporting our work so generously. As a result of your donations, we are positioned to expand our comprehensive initiatives to break down barriers to education while providing enriching and empowering education programs.
-
- Each month we will be highlighting a specific program to let you know how your support is making a difference and how we are working to lift our students out of extreme poverty through the power of education.
-
- Last week, as students began their new school year, Kenya Connect's ""Magic School Bus"" began its rounds bringing books to the schools for students to check out during Library Days. Last year we issued 1400 library cards to students at 14 schools. We are striving to double that number so more students will have access to the knowledge, joy and wonder of books. All studies show that daily reading helps improve student success and helps increase fluency and comprehension while nurturing creativity and critical thinking. As we issue more library cards, we are building our library collection and hope to reach 10,000 books by the end of the year!
-
- We know that parents are instrumental in nurturing a reader. Librarian Primma Kioko has been meeting with parent groups demonstrating effective strategies of reading a book, encouraging a “reading safari"" through suggesting that parents have their children read books to them, and asking about pictures and posing, “What If” questions. A Parent Guide was created in consultation with parents and written in both English and Kiswahili, giving pointers and ideas on how to nurture reading (see attached).
-
- One of the barriers to reading for many of our students is the lack of light at their homestead. As a result of our rent-to-own solar light program, more students are reading at home through safe and clean light.
-
- James Musyoka, Executive Director, Kenya, has stated, ""the reading program is one of the most important initiatives to truly improve education and to help our students be successful. We are striving to be TheVillageThatReads as we work to enrich our students through the power of books.""
-
- As we are off and running in 2019, we will also have friends in Maryland running and walking to support our work at the Kenya Connect 5K: Running for Education on Two Continents being held on Saturday, March 30 at 9:00 am in Ellicott City. We are especially excited that Patrick Munguti, Kenya Connect's Director of Technology and Education Programs, will be running the race and sharing more information about Kenya Connect with the participants. We would love to have you join us at the race or as a virtual runner. You can learn more about the race and register HERE!
-
- Thank you for being a Kenya Connect champion! We encourage you to follow us on social media for daily updates and stay tuned for next month's update!",
-    project_id: project.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1515961896317-adf9e14bdcc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  file = URI.open('https://www.globalgiving.org/pfil/13015/unnamed112_Large.jpg')
+  article_project.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project.save!
 
 project_1 = Project.new(
   name:    "Improving primary forest protection",
@@ -111,33 +96,15 @@ file = URI.open('https://images.unsplash.com/photo-1469125155630-7ed37e065743?ix
 project_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_1.save!
 
-article = Article.new(
-    title:    "Big News! KC Winner of PanAfrican Award",
-    description: "We are thrilled to announce that Kenya Connect is a Runner Up Prizewinner of the 2019 Pan-African Award for Entrepreneurship in Education. With an emphasis on sustainability, the awards offer monetary prizes as an investment in organisations whose inspirational work is transforming the futures of African Youth.
- Supported by The Saville Foundation and managed by Teach A Man To Fish, the Pan-African Awards combine the aims and expertise of both organisations. Kenya Connect was selected out of 340 organizations and the only NGO in Kenya to win this prestigious award. Read more about the award and other winners HERE
- As a Runner Up, Kenya Connect will receive $5,000 plus Co-Founder and Executive Director, Kenya James Musyoka will travel to London in March to accept the award and participate in engaging seminars and programs. The award prize will help us launch the Mighty Moringa Tree project at six partner schools. ""We are honored and humbled by this award,"" commented James Musyoka. ""This distinction recognizes the work of Kenya Connect as a leader in innovative programs to strengthen education in rural Kenya.""
- The Mighty Moringa Tree will be launched in January as a project that incorporates environmental stewardship and micro enterprise through planting the drought resistant moringa tree that produces a highly nutritious leaves and seeds that can be brewed as a drink or added to soups and stews. Students will follow in the tradition of Wangari Maathai by planting the trees to help mitigate climate change while creating a highly nutrious food source.
- As a donor to Kenya Connect we thought you'd be excited to hear our news. Your support means that we can continue to provide dynamic programs that prepare our students to be engaged citizens and learners.
- We will keep you posted as this project gets underway. Thanks for being a part of our Kenya Connect family!",
-    project_id: project_1.id
-  )
-  file = URI.open("https://1.bp.blogspot.com/-5ZumBBH9gnA/VhKW8kUBGeI/AAAAAAAADAk/OzgVkhPSoeY/s1600/The%2BPan%2BAfrican.png")
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
-
-article = Article.new(
-    title:    "Reading and Running: Read the Latest!",
-    description: "I am a Reading Champion!"" Over 240 students completed our first ever Reading Challenge program. In June, library card holders at five schools were issued colorful Space Reading Challenge guides which were created by students at the Garrison Forest School in Maryland. Filled with word games and space facts, students wrote the names of read books in the Challenge guide. Students were charged to read at least 25 books. The top girl and boy readers were dubbed ""Queen and King"" and awarded special prizes at the Running to Read festival. Congratulations to King Reader Kyalo from Maanzoni and Queen reader Elizabeth from Kisola PS. Teachers commented that they've seen a big improvement in Elizabeth's writing skills as she began reading more books. She was the top reader with 48 books in the three months!
- All students who completed the Reading Challenge were awarded a ""Reading Champion"" String bag and either crayons, colored pencils and a pen/pencil set depending on grade levels as well as NASA book marks and stickers. . We're building a culture of reading through these creative initiatives!
- We also celebrated reading at our annual 5K Race. Students, teachers and friends adorned with Red, Green, White and Black T-shirts (the colors of the Kenyan flag) marched through Wamunyu to the beat of the Mathunthini Battalion marching band with Big Story Books, Reading Signs, and Smiles on their way to the start of ""Running to Read,"" Kenya Connect's annual 5K race, through the hills of Wamunyu. The Run celebrates our work to be #TheVillageThatReads with students from 30 partner schools participating. Poet Moses Gold provided an inpiring talk and poem recitation to the gathered students and volunteers from the U.S. shared stories of their love of reading.
- Even though the Kenyan school year just ended, our staff will still be bringing out our Magic School Bus and Reading Rover Truck to schools so that students can borrow books over the break. Fun Book Enrichment Days and other programs will be held to continue our quest to be #TheVillageThatReads!
- GlobalGiving donors like you have been instrumental in helping us to build and nurture a culture of reading! The next time you pick up a book or read to your child or grandchild, know that a student in Kenya is reading thanks to you!
- Warmly,",
+article_project_1 = Article.new(
+    title:    "Seedlings are continuing to Grow.",
+    description: "We are excited that the seedlings planted over the summer are continuing to grow. These seedlings while still not very big, are the start of reforestation, which is crucial in Sierra Leone. Your ongoing support is helping reverse deforestation in Freetown, Sierra Leone. By restoring vegetation and the forest, we are helping to combat global warming and helping to reduce runoff water from the hills. The trees will help to reduce landslides and rockslides that have resulted in the loss of life. Reforestation is essential for the overall health and quality of life in the community. Your support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency for reforestation. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
     project_id: project_1.id
   )
   file = URI.open("https://www.globalgiving.org/pfil/13015/unnamed112_Large.jpg")
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  article_project_1.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_1.save!
+
 
 project_2 = Project.new(
   name:    "Protecting endangered species in China",
@@ -151,31 +118,16 @@ file = URI.open('https://images.unsplash.com/photo-1550358864-518f202c02ba?ixlib
 project_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_2.save!
 
-article = Article.new(
-    title:    "Seedlings are continuing to Grow",
-    description: "We are excited that the seedlings planted over the summer are continuing to grow. These seedlings while still not very big, are the start of reforestation, which is crucial in Sierra Leone. Your ongoing support is helping reverse deforestation in Freetown, Sierra Leone.
-
- By restoring vegetation and the forest, we are helping to combat global warming and helping to reduce runoff water from the hills. The trees will help to reduce landslides and rockslides that have resulted in the loss of life. Reforestation is essential for the overall health and quality of life in the community.
-
- Your support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency for reforestation. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
-    project_id: project_2.id
-  )
-  file = URI.open('https://www.globalgiving.org/pfil/13015/backtoschool_Large.jpg')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
-
-article = Article.new(
+article_project_2 = Article.new(
     title:    "Cooking Stoves help in reduce of gas emission and environment pollution",
-    description: "AHD fuel efficient model cooking stove helping rural women to cook safe and secure cooking at household level and their utensils are not more blackish and save cutting tress and wood sue less 50% which helps to reduce women burden to collect more and more wood for cooking purposes.
-
- AHD model cooking stove not only helping rural women to cook safe and secure but also reducing gas emissions and making environment safe and secure.
-
+    description: "AHD fuel efficient model cooking stove helping rural women to cook safe and secure cooking at household level and their utensils are not more blackish and save cutting tress and wood sue less 50% which helps to reduce women burden to collect more and more wood for cooking purposes. AHD model cooking stove not only helping rural women to cook safe and secure but also reducing gas emissions and making environment safe and secure.
  Green Pakistan project aims to help 1,500 families with tree plantation and cooking stove installation to save women health, we are looking support and donations at YEAR END campaign to help this project to raise 15,000 US $ quickly",
     project_id: project_2.id
   )
-  file = URI.open('https://www.globalgiving.org/pfil/13015/solarjune2_1_Large.jpg')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  file = URI.open('https://images.unsplash.com/photo-1514241393572-57228eeefa4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80')
+  article_project_2.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_2.save!
+
 
 project_3 = Project.new(
   name:    "Helping teenagers reconnect to nature",
@@ -189,32 +141,19 @@ file = URI.open('https://images.unsplash.com/photo-1541580621-cb65cc53084b?ixlib
 project_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_3.save!
 
-article = Article.new(
-    title:    "The Time to Plant Valuable Trees and make a Green Pakistan",
-    description: "AHD efforts to help poor farming communities towards adopt forestry planting, water conservation as well as fruit trees and valuable tress planting on their agricultural lands. AHD working in rural areas of lower Sindh and targeting rural areas of Hyderabad, Tando M. Khan, Sujawal, Badin and Thatta districts, where majority of populations engaged in farming profession since their forefathers but now through the awareness and mobilization farmers adopted the new techniques of water conservation as well as tree plantation.
-
- The trees picture attached with report showing the farmers practices of plantation Sunbal, Conocarpus Tress on large scale.
-
- AHD next plans to make trainings of some 100 more farmers and help them to adopt tree plantation as well as water conservation for their lands.",
+article_project_3 = Article.new(
+    title:    "Reading and Running: Read the Latest!",
+    description: "I am a Reading Champion!"" Over 240 students completed our first ever Reading Challenge program. In June, library card holders at five schools were issued colorful Space Reading Challenge guides which were created by students at the Garrison Forest School in Maryland. Filled with word games and space facts, students wrote the names of read books in the Challenge guide. Students were charged to read at least 25 books. The top girl and boy readers were dubbed ""Queen and King"" and awarded special prizes at the Running to Read festival. Congratulations to King Reader Kyalo from Maanzoni and Queen reader Elizabeth from Kisola PS. Teachers commented that they've seen a big improvement in Elizabeth's writing skills as she began reading more books. She was the top reader with 48 books in the three months!
+ All students who completed the Reading Challenge were awarded a ""Reading Champion"" String bag and either crayons, colored pencils and a pen/pencil set depending on grade levels as well as NASA book marks and stickers. . We're building a culture of reading through these creative initiatives!
+ We also celebrated reading at our annual 5K Race. Students, teachers and friends adorned with Red, Green, White and Black T-shirts (the colors of the Kenyan flag) marched through Wamunyu to the beat of the Mathunthini Battalion marching band with Big Story Books, Reading Signs, and Smiles on their way to the start of ""Running to Read,"" Kenya Connect's annual 5K race, through the hills of Wamunyu. The Run celebrates our work to be #TheVillageThatReads with students from 30 partner schools participating. Poet Moses Gold provided an inpiring talk and poem recitation to the gathered students and volunteers from the U.S. shared stories of their love of reading.
+ Even though the Kenyan school year just ended, our staff will still be bringing out our Magic School Bus and Reading Rover Truck to schools so that students can borrow books over the break. Fun Book Enrichment Days and other programs will be held to continue our quest to be #TheVillageThatReads!
+ GlobalGiving donors like you have been instrumental in helping us to build and nurture a culture of reading! The next time you pick up a book or read to your child or grandchild, know that a student in Kenya is reading thanks to you! Warmly,",
     project_id: project_3.id
   )
-  file = URI.open('https://images.unsplash.com/photo-1535438414045-70dbc0464d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  file = URI.open('https://www.globalgiving.org/pfil/13015/unnamed112_Large.jpg')
+  article_project_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_3.save!
 
-article = Article.new(
-    title:    "Big News! KC Winner of PanAfrican Award",
-    description: "We are thrilled to announce that Kenya Connect is a Runner Up Prizewinner of the 2019 Pan-African Award for Entrepreneurship in Education. With an emphasis on sustainability, the awards offer monetary prizes as an investment in organisations whose inspirational work is transforming the futures of African Youth.
- Supported by The Saville Foundation and managed by Teach A Man To Fish, the Pan-African Awards combine the aims and expertise of both organisations. Kenya Connect was selected out of 340 organizations and the only NGO in Kenya to win this prestigious award. Read more about the award and other winners HERE
- As a Runner Up, Kenya Connect will receive $5,000 plus Co-Founder and Executive Director, Kenya James Musyoka will travel to London in March to accept the award and participate in engaging seminars and programs. The award prize will help us launch the Mighty Moringa Tree project at six partner schools. ""We are honored and humbled by this award,"" commented James Musyoka. ""This distinction recognizes the work of Kenya Connect as a leader in innovative programs to strengthen education in rural Kenya.""
- The Mighty Moringa Tree will be launched in January as a project that incorporates environmental stewardship and micro enterprise through planting the drought resistant moringa tree that produces a highly nutritious leaves and seeds that can be brewed as a drink or added to soups and stews. Students will follow in the tradition of Wangari Maathai by planting the trees to help mitigate climate change while creating a highly nutrious food source.
- As a donor to Kenya Connect we thought you'd be excited to hear our news. Your support means that we can continue to provide dynamic programs that prepare our students to be engaged citizens and learners.
- We will keep you posted as this project gets underway. Thanks for being a part of our Kenya Connect family!",
-    project_id: project_3.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1514241393572-57228eeefa4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
 
 project_4 = Project.new(
   name:    "Disaster recovery: saving Australia from wildfires.",
@@ -228,23 +167,15 @@ file = URI.open('https://images.unsplash.com/photo-1507680465142-ef2223e23308?ix
 project_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_4.save!
 
-article = Article.new(
+article_project_4 = Article.new(
     title:    "Act against illegal logging of protected rainforests",
     description: Faker::Lorem.paragraph(sentence_count: 20),
     project_id: project_4.id
   )
-  file = URI.open('https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  file = URI.open('https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
+  article_project_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_4.save!
 
-article = Article.new(
-    title:    Faker::Lorem.words(number: 4),
-    description: Faker::Lorem.paragraph(sentence_count: 20),
-    project_id: project_4.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1512164599836-a491ef79f6d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
 
 
 project_5 = Project.new(
@@ -259,23 +190,15 @@ file = URI.open('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?ix
 project_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_5.save!
 
-article = Article.new(
+article_project_5 = Article.new(
     title:    "Act against illegal logging of protected rainforests",
     description: Faker::Lorem.paragraph(sentence_count: 20),
     project_id: project_5.id
   )
   file = URI.open('https://images.unsplash.com/photo-1579962413579-1ce97878b377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
+  article_project_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_5.save!
 
-article = Article.new(
-    title:    Faker::Lorem.words(number: 4),
-    description: Faker::Lorem.paragraph(sentence_count: 20),
-    project_id: project_5.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1524129426126-1b85d8c74fd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
 
 project_6 = Project.new(
   name:    "Empowering women in post-war regions.",
@@ -300,6 +223,15 @@ project_7 = Project.new(
 file = URI.open('https://images.unsplash.com/photo-1536859975388-b5e6623e9223?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
 project_7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_7.save!
+
+article = Article.new(
+    title:    "Off and Running in 2019!",
+    description: "Happy 2019! We are grateful to our plenty donors for supporting our work so generously. As a result of your donations, we are positioned to expand our comprehensive initiatives to break down barriers to education while providing enriching and empowering education programs. Each month we will be highlighting a specific program to let you know how your support is making a difference and how we are working to lift our students out of extreme poverty through the power of education. Last week, as students began their new school year, Kenya Connect's ""Magic School Bus"" began its rounds bringing books to the schools for students to check out during Library Days. Last year we issued 1400 library cards to students at 14 schools. We are striving to double that number so more students will have access to the knowledge, joy and wonder of books. All studies show that daily reading helps improve student success and helps increase fluency and comprehension while nurturing creativity and critical thinking. As we issue more library cards, we are building our library collection and hope to reach 10,000 books by the end of the year! We know that parents are instrumental in nurturing a reader. Librarian Primma Kioko has been meeting with parent groups demonstrating effective strategies of reading a book, encouraging a “reading safari"" through suggesting that parents have their children read books to them, and asking about pictures and posing, “What If” questions. A Parent Guide was created in consultation with parents and written in both English and Kiswahili, giving pointers and ideas on how to nurture reading (see attached).One of the barriers to reading for many of our students is the lack of light at their homestead. As a result of our rent-to-own solar light program, more students are reading at home through safe and clean light. James Musyoka, Executive Director, Kenya, has stated, ""the reading program is one of the most important initiatives to truly improve education and to help our students be successful. We are striving to be TheVillageThatReads as we work to enrich our students through the power of books.""As we are off and running in 2019, we will also have friends in Maryland running and walking to support our work at the Kenya Connect 5K: Running for Education on Two Continents being held on Saturday, March 30 at 9:00 am in Ellicott City. We are especially excited that Patrick Munguti, Kenya Connect's Director of Technology and Education Programs, will be running the race and sharing more information about Kenya Connect with the participants. We would love to have you join us at the race or as a virtual runner. You can learn more about the race and register HERE!Thank you for being a Kenya Connect champion! We encourage you to follow us on social media for daily updates and stay tuned for next month's update!",
+    project_id: project_7.id
+  )
+  file = URI.open('https://www.globalgiving.org/pfil/13015/backtoschool_Large.jpg')
+  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article.save!
 
 project_8 = Project.new(
   name:    "Empowering women in post-war regions.",
@@ -435,124 +367,221 @@ project_18.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png'
 project_18.save!
 
 project_19 = Project.new(
-  name:    "Empowering women in post-war regions.",
-  short_description: "The Free Women Foundation has established a women's center in an IDP camp in the Kurdistan Region of Iraq.",
+  name:    "Replanting Rainforest in Sumatra, Indonesia",
+  short_description: "We are working to restore vital orangutan habitat that has been destroyed by illegal oil palm plantations within the Gunung Leuser National Park. ",
   long_description: Faker::Lorem.paragraph(sentence_count: 20),
   price_cents: 1500,
   user_id: user.id,
   published: true
 )
-file = URI.open('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60')
+file = URI.open('https://www.sustainability-times.com/wp-content/uploads/2019/07/planting-trees-community142-1.jpg')
 project_19.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_19.save!
 
+article_project_19 = Article.new(
+    title:    "The Seedlings are Doing Well",
+    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
+    project_id: project_19.id
+  )
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
+  article_project_19.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_19.save!
+
+project_20 = Project.new(
+  name:    "Reconnect the Atlantic Forest with 20.000 Trees",
+  short_description: "The Brazilian Atlantic is one of the most biodiverse spots in the world yet deforestation has led to many small and isolated fragments and the loss of many native species.",
+  long_description: Faker::Lorem.paragraph(sentence_count: 20),
+  price_cents: 1500,
+  user_id: user.id,
+  published: true
+)
+file = URI.open('https://www.carbonbrief.org/wp-content/uploads/2019/08/amazon-rainforest-FF2BA3-1550x804.jpg')
+project_20.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+project_20.save!
+
+article_project_20 = Article.new(
+    title:    "The Seedlings are Doing Well",
+    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
+    project_id: project_20.id
+  )
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
+  article_project_20.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_20.save!
+
+
+project_21 = Project.new(
+  name:    "Forests4Water Brazil: Community forest restoration",
+  short_description: "Here in Brazil we've already planted 100,000 native rainforest trees and this year we aim to plant another 10,000! Why? Because springs are running dry, farmers are losing their crops and city water supplies are threatened.",
+  long_description: Faker::Lorem.paragraph(sentence_count: 20),
+  price_cents: 1500,
+  user_id: user.id,
+  published: true
+)
+file = URI.open('https://www.thisiscolossal.com/wp-content/uploads/2019/04/rainwater-chandelier-og.jpg')
+project_21.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+project_21.save!
+
+article_project_21 = Article.new(
+    title:    "The Seedlings are Doing Well",
+    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
+    project_id: project_21.id
+  )
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
+  article_project_21.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_21.save!
+
+project_22 = Project.new(
+  name:    "Young EcoLeaders of the Brazilian Rainforest",
+  short_description: "Children in our remote rural area live in one of the world's top biodiversity hotspots, yet their level of understanding and appreciation for the forests is very low.",
+  long_description: Faker::Lorem.paragraph(sentence_count: 20),
+  price_cents: 1500,
+  user_id: user.id,
+  published: true
+)
+file = URI.open('https://images.unsplash.com/photo-1436303892196-e039f81a04aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=996&q=80')
+project_22.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+project_22.save!
+
+article_project_22 = Article.new(
+    title:    "The Seedlings are Doing Well",
+    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
+    project_id: project_22.id
+  )
+  file = URI.open("hhttps://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
+  article_project_22.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  article_project_22.save!
+
 category_project1 = ProjectCategory.new(
     project_id: project_1.id,
-    category_id: category.id
+    category_id: humanitary.id
 )
 category_project1.save!
 
 category_project2 = ProjectCategory.new(
     project_id: project_2.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project2.save!
 
 category_project3 = ProjectCategory.new(
     project_id: project_3.id,
-    category_id: category1.id
+    category_id: education.id
 )
 category_project3.save!
 
 category_project4 = ProjectCategory.new(
     project_id: project_4.id,
-    category_id: category2.id
+    category_id: local.id
 )
 category_project4.save!
 
 category_project5 = ProjectCategory.new(
     project_id: project_5.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project5.save!
 
 category_project6 = ProjectCategory.new(
     project_id: project_6.id,
-    category_id: category2.id
+    category_id: local.id
 )
 category_project6.save!
 
 category_project7 = ProjectCategory.new(
     project_id: project_7.id,
-    category_id: category.id
+    category_id: humanitary.id
 )
 category_project7.save!
 
 category_project8 = ProjectCategory.new(
     project_id: project_8.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project8.save!
 
 category_project9 = ProjectCategory.new(
     project_id: project_9.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project9.save!
 
 category_project10 = ProjectCategory.new(
     project_id: project_10.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project10.save!
 
 category_project11 = ProjectCategory.new(
     project_id: project_11.id,
-    category_id: category3.id
+    category_id: environment.id
 )
 category_project11.save!
 
 category_project12 = ProjectCategory.new(
     project_id: project_12.id,
-    category_id: category2.id
+    category_id: local.id
 )
 category_project12.save!
 
 category_project13 = ProjectCategory.new(
     project_id: project_16.id,
-    category_id: category.id
+    category_id: humanitary.id
 )
 category_project13.save!
 
 category_project14 = ProjectCategory.new(
     project_id: project_14.id,
-    category_id: category.id
+    category_id: humanitary.id
 )
 category_project14.save!
 
 category_project15 = ProjectCategory.new(
     project_id: project_15.id,
-    category_id: category.id
+    category_id: humanitary.id
 )
 category_project15.save!
 
 category_project16 = ProjectCategory.new(
     project_id: project_17.id,
-    category_id: category1.id
+    category_id: education.id
 )
 category_project16.save!
 
 category_project17 = ProjectCategory.new(
     project_id: project_18.id,
-    category_id: category1.id
+    category_id: education.id
 )
 category_project17.save!
 
 category_project18 = ProjectCategory.new(
     project_id: project_19.id,
-    category_id: category1.id
+    category_id: education.id
 )
 category_project18.save!
+
+category_project19 = ProjectCategory.new(
+    project_id: project_20.id,
+    category_id: environment.id
+)
+category_project19.save!
+
+category_project20 = ProjectCategory.new(
+    project_id: project_21.id,
+    category_id: environment.id
+)
+category_project20.save!
+
+category_project21 = ProjectCategory.new(
+    project_id: project_22.id,
+    category_id: environment.id
+)
+category_project21.save!
+
+category_project22 = ProjectCategory.new(
+    project_id: project_23.id,
+    category_id: environment.id
+)
+category_project22.save!
 
 
 Project.all.each do |pr|
@@ -563,6 +592,9 @@ Project.all.each do |pr|
   end
 end
 puts 'Finished!'
+time_required = Time.now - start_time
+
+puts 'Time required: #{time_required}'
 
 
 # Project.joins(:payment).select('count(payments.id)').group_by('projects.id')

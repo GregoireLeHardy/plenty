@@ -15,11 +15,15 @@
 <!--   <div>
     <%= render "shared/button_follow_project", project: @project %>
   </div> -->
+  <div class="donation_sum_progress">
+    <label for="file">€<%= @donation_sum %> out of €<%= @project.price_cents%> raised</label>
+    <progress id="file" value="<%= @donation_sum %>" max="<%= @project.price_cents %>"> 50% </progress>
+  </div>
   <div>
     <% if policy(@project).update? %>
       <span class="create-article-3">      <%= link_to edit_project_path(@project) do %>
         <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582802611/Sans_titre-1_kyhx7n.png"%>
-        <% end %>
+    <% end %>
       </span>
     <% end %>
   </div>
