@@ -172,7 +172,7 @@ article_project_4 = Article.new(
     description: Faker::Lorem.paragraph(sentence_count: 20),
     project_id: project_4.id
   )
-  file = URI.open('https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80')
+  file = URI.open('https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
   article_project_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article_project_4.save!
 
@@ -383,7 +383,7 @@ article_project_19 = Article.new(
     description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
     project_id: project_19.id
   )
-  file = URI.open("https://images.unsplash.com/photo-1535438414045-70dbc0464d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
   article_project_19.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article_project_19.save!
 
@@ -404,7 +404,7 @@ article_project_20 = Article.new(
     description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
     project_id: project_20.id
   )
-  file = URI.open("https://images.unsplash.com/photo-1535438414045-70dbc0464d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
   article_project_20.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article_project_20.save!
 
@@ -426,7 +426,7 @@ article_project_21 = Article.new(
     description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
     project_id: project_21.id
   )
-  file = URI.open("https://images.unsplash.com/photo-1535438414045-70dbc0464d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80")
+  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
   article_project_21.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article_project_21.save!
 
@@ -447,7 +447,7 @@ article_project_22 = Article.new(
     description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
     project_id: project_22.id
   )
-  file = URI.open("https://images.unsplash.com/photo-1535438414045-70dbc0464d5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100vw&q=80")
+  file = URI.open("hhttps://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
   article_project_22.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   article_project_22.save!
 
