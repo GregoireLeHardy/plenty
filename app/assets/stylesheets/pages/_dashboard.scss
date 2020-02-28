@@ -13,21 +13,24 @@
 
 .data-box {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px;
+  background: none;
+  border: 1px solid #f6f6f6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 30px;
   border-radius: 5px;
   height: 200px;
+  margin-top:35px;
 }
 
 .graph-box {
   overflow: hidden;
-  background: white;
+  background: none;
+  border: 1px solid #f6f6f6;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  height: 400px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  height: 350px;
+  padding-bottom: 50px;
+  margin-top: 30px;
 }
 
 .projects-container h1 {
