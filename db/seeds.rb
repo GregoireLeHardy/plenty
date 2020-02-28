@@ -141,19 +141,6 @@ file = URI.open('https://images.unsplash.com/photo-1541580621-cb65cc53084b?ixlib
 project_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_3.save!
 
-article_project_3 = Article.new(
-    title:    "Reading and Running: Read the Latest!",
-    description: "I am a Reading Champion!"" Over 240 students completed our first ever Reading Challenge program. In June, library card holders at five schools were issued colorful Space Reading Challenge guides which were created by students at the Garrison Forest School in Maryland. Filled with word games and space facts, students wrote the names of read books in the Challenge guide. Students were charged to read at least 25 books. The top girl and boy readers were dubbed ""Queen and King"" and awarded special prizes at the Running to Read festival. Congratulations to King Reader Kyalo from Maanzoni and Queen reader Elizabeth from Kisola PS. Teachers commented that they've seen a big improvement in Elizabeth's writing skills as she began reading more books. She was the top reader with 48 books in the three months!
- All students who completed the Reading Challenge were awarded a ""Reading Champion"" String bag and either crayons, colored pencils and a pen/pencil set depending on grade levels as well as NASA book marks and stickers. . We're building a culture of reading through these creative initiatives!
- We also celebrated reading at our annual 5K Race. Students, teachers and friends adorned with Red, Green, White and Black T-shirts (the colors of the Kenyan flag) marched through Wamunyu to the beat of the Mathunthini Battalion marching band with Big Story Books, Reading Signs, and Smiles on their way to the start of ""Running to Read,"" Kenya Connect's annual 5K race, through the hills of Wamunyu. The Run celebrates our work to be #TheVillageThatReads with students from 30 partner schools participating. Poet Moses Gold provided an inpiring talk and poem recitation to the gathered students and volunteers from the U.S. shared stories of their love of reading.
- Even though the Kenyan school year just ended, our staff will still be bringing out our Magic School Bus and Reading Rover Truck to schools so that students can borrow books over the break. Fun Book Enrichment Days and other programs will be held to continue our quest to be #TheVillageThatReads!
- GlobalGiving donors like you have been instrumental in helping us to build and nurture a culture of reading! The next time you pick up a book or read to your child or grandchild, know that a student in Kenya is reading thanks to you! Warmly,",
-    project_id: project_3.id
-  )
-  file = URI.open('https://www.globalgiving.org/pfil/13015/unnamed112_Large.jpg')
-  article_project_3.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_3.save!
-
 
 project_4 = Project.new(
   name:    "Disaster recovery: saving Australia from wildfires.",
@@ -167,16 +154,6 @@ file = URI.open('https://images.unsplash.com/photo-1507680465142-ef2223e23308?ix
 project_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_4.save!
 
-article_project_4 = Article.new(
-    title:    "Act against illegal logging of protected rainforests",
-    description: Faker::Lorem.paragraph(sentence_count: 20),
-    project_id: project_4.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80')
-  article_project_4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_4.save!
-
-
 
 project_5 = Project.new(
   name:    "Cleaning the atlantic ocean of micro-plastics",
@@ -189,15 +166,6 @@ project_5 = Project.new(
 file = URI.open('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80')
 project_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_5.save!
-
-article_project_5 = Article.new(
-    title:    "Act against illegal logging of protected rainforests",
-    description: Faker::Lorem.paragraph(sentence_count: 20),
-    project_id: project_5.id
-  )
-  file = URI.open('https://images.unsplash.com/photo-1579962413579-1ce97878b377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60')
-  article_project_5.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_5.save!
 
 
 project_6 = Project.new(
@@ -224,14 +192,6 @@ file = URI.open('https://images.unsplash.com/photo-1536859975388-b5e6623e9223?ix
 project_7.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_7.save!
 
-article = Article.new(
-    title:    "Off and Running in 2019!",
-    description: "Happy 2019! We are grateful to our plenty donors for supporting our work so generously. As a result of your donations, we are positioned to expand our comprehensive initiatives to break down barriers to education while providing enriching and empowering education programs. Each month we will be highlighting a specific program to let you know how your support is making a difference and how we are working to lift our students out of extreme poverty through the power of education. Last week, as students began their new school year, Kenya Connect's ""Magic School Bus"" began its rounds bringing books to the schools for students to check out during Library Days. Last year we issued 1400 library cards to students at 14 schools. We are striving to double that number so more students will have access to the knowledge, joy and wonder of books. All studies show that daily reading helps improve student success and helps increase fluency and comprehension while nurturing creativity and critical thinking. As we issue more library cards, we are building our library collection and hope to reach 10,000 books by the end of the year! We know that parents are instrumental in nurturing a reader. Librarian Primma Kioko has been meeting with parent groups demonstrating effective strategies of reading a book, encouraging a “reading safari"" through suggesting that parents have their children read books to them, and asking about pictures and posing, “What If” questions. A Parent Guide was created in consultation with parents and written in both English and Kiswahili, giving pointers and ideas on how to nurture reading (see attached).One of the barriers to reading for many of our students is the lack of light at their homestead. As a result of our rent-to-own solar light program, more students are reading at home through safe and clean light. James Musyoka, Executive Director, Kenya, has stated, ""the reading program is one of the most important initiatives to truly improve education and to help our students be successful. We are striving to be TheVillageThatReads as we work to enrich our students through the power of books.""As we are off and running in 2019, we will also have friends in Maryland running and walking to support our work at the Kenya Connect 5K: Running for Education on Two Continents being held on Saturday, March 30 at 9:00 am in Ellicott City. We are especially excited that Patrick Munguti, Kenya Connect's Director of Technology and Education Programs, will be running the race and sharing more information about Kenya Connect with the participants. We would love to have you join us at the race or as a virtual runner. You can learn more about the race and register HERE!Thank you for being a Kenya Connect champion! We encourage you to follow us on social media for daily updates and stay tuned for next month's update!",
-    project_id: project_7.id
-  )
-  file = URI.open('https://www.globalgiving.org/pfil/13015/backtoschool_Large.jpg')
-  article.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article.save!
 
 project_8 = Project.new(
   name:    "Empowering women in post-war regions.",
@@ -378,14 +338,6 @@ file = URI.open('https://www.sustainability-times.com/wp-content/uploads/2019/07
 project_19.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_19.save!
 
-article_project_19 = Article.new(
-    title:    "The Seedlings are Doing Well",
-    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
-    project_id: project_19.id
-  )
-  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
-  article_project_19.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_19.save!
 
 project_20 = Project.new(
   name:    "Reconnect the Atlantic Forest with 20.000 Trees",
@@ -398,15 +350,6 @@ project_20 = Project.new(
 file = URI.open('https://www.carbonbrief.org/wp-content/uploads/2019/08/amazon-rainforest-FF2BA3-1550x804.jpg')
 project_20.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_20.save!
-
-article_project_20 = Article.new(
-    title:    "The Seedlings are Doing Well",
-    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
-    project_id: project_20.id
-  )
-  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
-  article_project_20.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_20.save!
 
 
 project_21 = Project.new(
@@ -421,14 +364,6 @@ file = URI.open('https://www.thisiscolossal.com/wp-content/uploads/2019/04/rainw
 project_21.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_21.save!
 
-article_project_21 = Article.new(
-    title:    "The Seedlings are Doing Well",
-    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
-    project_id: project_21.id
-  )
-  file = URI.open("https://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
-  article_project_21.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_21.save!
 
 project_22 = Project.new(
   name:    "Young EcoLeaders of the Brazilian Rainforest",
@@ -442,14 +377,6 @@ file = URI.open('https://images.unsplash.com/photo-1436303892196-e039f81a04aa?ix
 project_22.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 project_22.save!
 
-article_project_22 = Article.new(
-    title:    "The Seedlings are Doing Well",
-    description: "We greatly appreciate your ongoing support that is helping reverse deforestation in Freetown, Sierra Leone. As a nation, Sierra Leone is prone to natural disasters especially due to deforestation. It's a slow process, but reforestation is crucial and we are happy to show that the seedlings planted in June 2018 at the Bathurst –Grafton Highway are growing. You can see in the below photos taken this past week, that the trees are growing and that over 80% of trees planted survived the winter and they are all fresh and green. It is expected that the trees will grow even more when the rainy season starts in June. While reforestation in Sierra Leone will continue to be a long-term endeavor due to the extent of the deforestation, it is necessary. Your on-going support is much appreciated as we continue to follow the steps recommended by the local Environmental Protection Agency. We encourage you to consider starting a monthly recurring donation here. Even a few dollars a month will go a long way. Please also share this with your contacts and invite them to consider supporting this ongoing project.",
-    project_id: project_22.id
-  )
-  file = URI.open("hhttps://images.unsplash.com/photo-1534670400940-bc85153f15f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80")
-  article_project_22.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  article_project_22.save!
 
 category_project1 = ProjectCategory.new(
     project_id: project_1.id,
@@ -577,11 +504,6 @@ category_project21 = ProjectCategory.new(
 )
 category_project21.save!
 
-category_project22 = ProjectCategory.new(
-    project_id: project_23.id,
-    category_id: environment.id
-)
-category_project22.save!
 
 
 Project.all.each do |pr|
@@ -594,7 +516,7 @@ end
 puts 'Finished!'
 time_required = Time.now - start_time
 
-puts 'Time required: #{time_required}'
+puts "Time required: #{time_required}"
 
 
 # Project.joins(:payment).select('count(payments.id)').group_by('projects.id')
