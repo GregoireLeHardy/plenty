@@ -10,20 +10,20 @@
   <% end %>
   <div class="short-title-container" style="margin-top: 230px; margin-left: 100px; margin-right:120px;">
     <div> <%= @project.name %> </div>
-    <div>
-      <label for="file">Donations reached:</label>
-      <progress id="file" max="500" value="<%= @donation_sum %>"> 70% </progress>
-    </div>
     <div style="font-family:Avenir; font-size:20px; margin-bottom: 160px; padding-right: 100px: padding-left:100px;"> <%= @project.short_description %> </div>
   </div>
 <!--   <div>
     <%= render "shared/button_follow_project", project: @project %>
   </div> -->
+  <div class="donation_sum_progress">
+    <label for="file">€<%= @donation_sum %> out of €<%= @project.price_cents%> raised</label>
+    <progress id="file" value="<%= @donation_sum %>" max="<%= @project.price_cents %>"> 50% </progress>
+  </div>
   <div>
     <% if policy(@project).update? %>
       <span class="create-article-3">      <%= link_to edit_project_path(@project) do %>
         <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582802611/Sans_titre-1_kyhx7n.png"%>
-        <% end %>
+    <% end %>
       </span>
     <% end %>
   </div>
