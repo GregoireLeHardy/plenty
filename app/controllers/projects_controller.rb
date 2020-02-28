@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @projects = policy_scope filtered_projects
+    @projects =  filtered_projects
   end
 
   def show
@@ -68,11 +68,11 @@ class ProjectsController < ApplicationController
 
   def set_projects_by_user
     if current_user&.admin
-      @projects = Project.all
+      @projects = policy_scope Project.all
     elsif current_user
-      @projects = Project.where(published: true).or(current_user.projects)
+      @projects = policy_scope Project.where(published: true).or(current_user.projects)
     else
-      @projects = Project.where(published: true)
+      @projects = policy_scope Project.where(published: true)
     end
   end
 

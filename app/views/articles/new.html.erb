@@ -1,15 +1,13 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>Create a new article</h1>
-      <div class="article-form">
-        <%= simple_form_for [@project, @article] do |f| %>
-          <%= f.input :title %>
-          <%= f.input :description%>
-          <%= f.input :photo, as: :file %>
-          <%= f.button :submit, class: 'btn' %>
-        <% end %>
-      </div>
+<div class="article-create">
+  <div class="long-description-2">
+    <h1 style="margin-right:60px;">Create a new article</h1>
+    <div class="write-article-box" style>
+      <%= simple_form_for [@project, @article] do |f| %>
+        <%= f.input :title, label: "Title", :label_html => { :class => 'form' }, input_html: { class: "form-input" } %>
+        <%= f.input :description, label: "Text content", :label_html => { :class => 'form' }%>
+        <%= f.input :photo, as: :file, label: "Picture", :label_html => { :class => 'form' } %>
+        <%= f.button :submit, class: 'btn-2' %>
+      <% end %>
     </div>
   </div>
 </div>
