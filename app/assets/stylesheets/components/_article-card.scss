@@ -1,24 +1,40 @@
-.article-card {
+  .article-card {
   font-size: 12px;
+  margin-top:-5px;
+  // margin-bottom: 10px;
+  // margin:30px;
   border-radius: 50%;
-  margin-bottom: 30px;
-  width: 150px;
-  height: 150px;
+  width: 80px;
+  height: 80px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  float: right;
+  // margin-left: 10px;
+  // margin-right: 10px;
 }
 
-.article-card h1 {
-  font-size: 14px;
-  font-style: bold;
-  text-align: center;
+.article-card-text h1{
+  padding-top: 15px;
+  width: 390px;
+  height: auto;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: right;
+  float: right;
   vertical-align: middle;
   font-family: "Avenir";
-  color: white;
+  color: gray;
 }
 
-.article-card img {
-  image-size: 150px 150px;
-  border-radius: 50%;
+.article-card-text p{
+  padding-top: -3px;
+  padding-bottom: 30px;
+  width: 390px;
+  height: auto;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: right;
+  float: right;
+  vertical-align: middle;
+  font-family: "Avenir";
+  color: gray;
 }
