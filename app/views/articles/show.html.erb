@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div>
+  <div style="position:fixed">
     <% if policy(@project).update? %>
       <span class="create-article-3">      <%= link_to edit_project_article_path(@article) do %>
         <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582802611/Sans_titre-1_kyhx7n.png"%>
@@ -27,7 +27,7 @@
   </div>
   <div>
     <% if policy(@project).update? %>
-      <span class="create-article-2">     <%= link_to new_project_article_path(@project) do %>
+      <span class="create-article-2" style="position:fixed">     <%= link_to new_project_article_path(@project) do %>
         <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582730096/Articlenew_ffikjo.png"%>
         <% end %>
       </span>
@@ -35,7 +35,7 @@
   </div>
   <div>
     <% if policy(@project).update? %>
-      <span class="create-article-1" style="width:58px; height:58px;">     <%= link_to project_path(@project) do %>
+      <span class="create-article-1" style="width:58px; height:58px; position:fixed">     <%= link_to project_path(@project) do %>
         <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582904861/arrow_mtgtu3.png"%>
         <% end %>
       </span>
@@ -44,4 +44,7 @@
 </div>
 
 <div>
+</div>
+
+<div class="article-create-2" style="vertical-align: top; text-align:left;">
 </div>
