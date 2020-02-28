@@ -25,7 +25,7 @@ class Project < ApplicationRecord
   def photo_validation
     errors.add :photo, "no pics !!!" unless photo.attached?
     if photo.attached?
-      if photo.blob.byte_size > 1000000000
+      if photo.blob.byte_size > 100000000000
         photo.purge
         errors[:base] << 'Too big'
       elsif !photo.blob.content_type.starts_with?('image/')
