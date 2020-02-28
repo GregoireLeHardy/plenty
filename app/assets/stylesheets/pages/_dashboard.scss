@@ -3,6 +3,7 @@
 }
 .content-container {
   margin-left: 33%;
+  padding-right: 40px;
 }
 
 .user-picture {
@@ -31,12 +32,16 @@
 
 .projects-container h1 {
   margin-bottom: 35px;
-  margin-top: 35px;
+  margin-top: 105px;
+  margin-bottom: -50px;
+  font-family:$my-font;
+  color: black;
 }
 
 .data-box h2{
-  margin-top: 5px;
-  font-family: Avenir;
+  margin-top: 150px;
+  margin-bottom: -50px;
+  font-family:$my-font;
   font-size: 64px;
   font-weight: bold;
   position: absolute;
@@ -47,8 +52,9 @@
   }
 
 h4 {
-  margin-top: 10px;
-  font-family: Avenir;
+  margin-top: 60px;
+  margin-bottom: -40px;
+  font-family:$my-font;
   font-size: 24px;
   font-weight: bold;
 }
