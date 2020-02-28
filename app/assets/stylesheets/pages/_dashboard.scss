@@ -3,6 +3,7 @@
 }
 .content-container {
   margin-left: 33%;
+  padding-right: 40px;
 }
 
 .user-picture {
@@ -12,31 +13,38 @@
 
 .data-box {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px;
+  background: none;
+  border: 1px solid #f6f6f6;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin: 30px;
   border-radius: 5px;
   height: 200px;
+  margin-top:35px;
 }
 
 .graph-box {
   overflow: hidden;
-  background: white;
+  background: none;
+  border: 1px solid #f6f6f6;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  height: 400px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  height: 350px;
+  padding-bottom: 50px;
+  margin-top: 30px;
 }
 
 .projects-container h1 {
   margin-bottom: 35px;
-  margin-top: 35px;
+  margin-top: 105px;
+  margin-bottom: -50px;
+  font-family:$my-font;
+  color: black;
 }
 
 .data-box h2{
-  margin-top: 5px;
-  font-family: Avenir;
+  margin-top: 150px;
+  margin-bottom: -50px;
+  font-family:$my-font;
   font-size: 64px;
   font-weight: bold;
   position: absolute;
@@ -47,8 +55,9 @@
   }
 
 h4 {
-  margin-top: 10px;
-  font-family: Avenir;
+  margin-top: 60px;
+  margin-bottom: -40px;
+  font-family:$my-font;
   font-size: 24px;
   font-weight: bold;
 }

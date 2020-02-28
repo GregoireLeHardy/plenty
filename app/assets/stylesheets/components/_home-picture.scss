@@ -12,7 +12,7 @@
 }
 
 .article-create {
-  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582829715/sheet_khlbkb.jpg");
+  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582910426/photo-1559311648-addd6af95dd4-2_g7syqc.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -22,6 +22,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.article-create-2 {
+  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582910426/photo-1559311648-addd6af95dd4-2_g7syqc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  // align-items: center;
+  justify-content: center;
+  padding-top:65px;
 }
 
 .project-page-picture {
@@ -67,7 +81,7 @@
 }
 
 .user-picture {
-  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582286365/michael-dam-mEZ3PoFGs_k-unsplash_kc1kqv.jpg");
+  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582912272/Profile_wnrsvt.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   font-size: 10px;
@@ -77,4 +91,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dashboard-wall {
+  background-image: url("https://res.cloudinary.com/dnizmljvi/image/upload/v1582913652/mur-3_u2spev.jpg");
+  background-opacity: 0.5;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
 }

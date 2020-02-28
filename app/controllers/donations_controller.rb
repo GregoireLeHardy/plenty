@@ -23,6 +23,7 @@ class DonationsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:donation][:project_id])
     @donation = current_user.donations.find(params[:id])
     @project = @donation.project
     authorize @donation

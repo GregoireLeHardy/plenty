@@ -1,7 +1,8 @@
 .square-cover-m {
   margin-bottom: 15px;
-  height: 250px;
+  height: 350px;
   border-radius: 5px;
+  color:none;
 }
 
 .square-cover:hover  {
@@ -10,7 +11,7 @@
   filter: grayscale(60%);
   text-color: black;
   height: 100%;
-
+  color:none;
   .card-text {
     display: block;
     font-family:$my-font;
