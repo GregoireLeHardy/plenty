@@ -3,7 +3,7 @@ class Article < ApplicationRecord
   belongs_to :project, counter_cache: true
 
   validates :photo, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, length: { maximum: 750 }
   validates :title, presence: true
   validate :photo_validation
 
