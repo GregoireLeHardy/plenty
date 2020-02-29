@@ -12,5 +12,15 @@
   </div>
 </div>
 
+  <div>
+    <% if policy(@project).update? %>
+      <span class="create-article-1" style="width:58px; height:58px; position:fixed">     <%= link_to project_path(@project) do %>
+        <%= image_tag "https://res.cloudinary.com/dnizmljvi/image/upload/v1582904861/arrow_mtgtu3.png"%>
+        <% end %>
+      </span>
+    <% end %>
+  </div>
+
+
 <div class="article-create-2" style="vertical-align: top; text-align:left;">
 </div>
